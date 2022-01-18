@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/main_tab1_selector.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/main_tab2_selector.xml" value="0.22037037037037038" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/main_tab3_selector.xml" value="0.22037037037037038" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/main_tab4_selector.xml" value="0.22037037037037038" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/main_tab5_selector.xml" value="0.22037037037037038" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/main_tab_text_selector.xml" value="0.22037037037037038" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/tab_home_selector.xml" value="0.22037037037037038" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/activity_main.xml" value="0.19067028985507245" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/bottom_layout.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/fragment1.xml" value="0.18704710144927536" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/main_fragment2.xml" value="0.18704710144927536" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/main_fragment3.xml" value="0.18704710144927536" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/main_fragment4.xml" value="0.18704710144927536" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/main_fragment5.xml" value="0.18704710144927536" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
