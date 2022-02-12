@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">peach-garden</string>
+    <string name="English">英</string>
+    <string name="French">法</string>
+    <string name="Russian">俄</string>
+    <string name="Japan">日</string>
+    <string name="Korean">韩</string>
+    <string name="grand1">简单</string>
+    <string name="grand2">中等</string>
+    <string name="grand3">困难</string>
 </resources>

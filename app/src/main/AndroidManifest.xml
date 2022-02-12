@@ -18,6 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.poetry_hall.TranslationActivity"></activity>
+        <activity android:name=".activity.poetry_hall.SearchActivity"></activity>
+        <activity android:name=".activity.poetry_hall.PoeterActivity"></activity>
+        <activity android:name=".activity.poetry_hall.GrandActivity"></activity>
+        <activity android:name=".activity.poetry_hall.DynastyActivity"></activity>
+        <activity android:name=".activity.poetry_hall.ThemeActivity"></activity>
+        <activity android:name=".activity.poetry_hall.PoemcourseActivity"></activity>
+        <activity android:name=".activity.poetry_hall.ResultsActivity"></activity>
     </application>
 
 </manifest>
