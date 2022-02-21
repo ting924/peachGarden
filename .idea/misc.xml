@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/item_clicked.xml" value="0.26979166666666665" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/main_tab1_selector.xml" value="0.26979166666666665" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/main_tab2_selector.xml" value="0.22037037037037038" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/main_tab3_selector.xml" value="0.22037037037037038" />
@@ -10,6 +12,8 @@
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/main_tab5_selector.xml" value="0.22037037037037038" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/main_tab_text_selector.xml" value="0.22037037037037038" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/sc_tab_text_selector.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/shape_textbg_red.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/shiguan_btn_selector.xml" value="0.26979166666666665" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/shoucang_button.xml" value="0.26979166666666665" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/tab_home_selector.xml" value="0.22037037037037038" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/activity_main.xml" value="0.19067028985507245" />
@@ -26,6 +30,7 @@
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/recycle_item_guanzhu.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/recycle_item_shizuo.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/recycle_item_shoucang.xml" value="0.8" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/recycle_item_xinjian.xml" value="0.4234769687964339" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/recyle_item_fensi.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/sc_fragment1.xml" value="0.2028985507246377" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/sc_fragment2.xml" value="0.2028985507246377" />

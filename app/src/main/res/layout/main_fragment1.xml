@@ -4,16 +4,76 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:background="@drawable/bg_frag1"
+    android:gravity="center"
+    android:paddingTop="40dp"
+    android:paddingBottom="30dp"
     android:id="@+id/main_fra1">
 
 
     <TextView
-        android:layout_width="match_parent"
+        android:ems="1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_gravity="center_vertical"
         android:gravity="center_horizontal"
-        android:textSize="32sp"
-        android:textColor="@color/app_color_red"
-        android:text=""/>
+        android:textSize="24sp"
+        android:textColor="#5B5E63"
+        android:text="孤帆一片日边来" />
+    <TextView
+        android:ems="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal"
+        android:textSize="24sp"
+        android:textColor="#5B5E63"
+        android:text="两岸青山相对出" />
+    <TextView
+        android:ems="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal"
+        android:textSize="24sp"
+        android:textColor="#5B5E63"
+        android:text="碧水东流至此回" />
+    <TextView
+        android:ems="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal"
+        android:textSize="24sp"
+        android:textColor="#5B5E63"
+        android:text="天门中断楚江开" />
+    <TextView
+        android:ems="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="0dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal"
+        android:textSize="15sp"
+        android:textColor="#5B5E63"
+        android:text="唐○ 李白" />
+    <TextView
+        android:ems="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:textColor="#5B5E63"
+        android:text="望天门山" />
 
 </LinearLayout>

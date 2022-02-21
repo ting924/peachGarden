@@ -3,12 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_xj"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:text="sc_fragment4"/>
+        android:layout_marginBottom="20dp"/>
 
 </LinearLayout>

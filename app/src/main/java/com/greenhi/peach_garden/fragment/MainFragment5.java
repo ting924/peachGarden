@@ -59,6 +59,7 @@ public class MainFragment5 extends Fragment {
 
     private void initPager() {
         viewPager = rootView.findViewById(R.id.sc_viewPager);
+//        viewPager.setOffscreenPageLimit(5);
         fragments = new ArrayList<>();
         fragments.add(WodeFragment1.newInstance());
         fragments.add(WodeFragment2.newInstance());
@@ -82,6 +83,7 @@ public class MainFragment5 extends Fragment {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 changeTab(position);
+                //viewPager.requestLayout();
             }
         });
     }

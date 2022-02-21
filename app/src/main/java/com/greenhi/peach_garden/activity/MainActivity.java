@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fragments.add(MainFragment5.newInstance());
         MyFragmentPagerAdapter pagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager(),getLifecycle(),fragments);
         viewPager.setAdapter(pagerAdapter);
-        viewPager.setCurrentItem(4,false);
+        viewPager.setCurrentItem(0,false);
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
