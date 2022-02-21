@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="@color/main_background_color"
+    android:background="@drawable/bg_frag1"
     android:id="@+id/main_fra1">
 
 
@@ -14,6 +14,6 @@
         android:gravity="center_horizontal"
         android:textSize="32sp"
         android:textColor="@color/app_color_red"
-        android:text="源"/>
+        android:text=""/>
 
 </LinearLayout>

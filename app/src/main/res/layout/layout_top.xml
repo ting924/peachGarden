@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_top"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:background="@color/transparent"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/transparent"
+        app:contentInsetStart="0.0dip">
+
+        <RelativeLayout
+            android:id="@+id/toolbar_back"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:gravity="left">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12.0dip"
+                android:layout_marginRight="15.0dip"
+                app:srcCompat="@drawable/arrow_back" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/iv_setting"
+                android:layout_marginRight="20.0dip"
+                app:srcCompat="@drawable/notifications" />
+
+            <ImageView
+                android:id="@+id/iv_setting"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="26.0dip"
+                app:srcCompat="@drawable/settings" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+</LinearLayout>

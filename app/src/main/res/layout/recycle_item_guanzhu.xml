@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="horizontal"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:id="@+id/cl_gz">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_gz_head"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/default_circle_head"
+            app:layout_constraintStart_toStartOf="@id/cl_gz"
+            app:layout_constraintTop_toTopOf="@+id/cl_gz"
+            app:layout_constraintBottom_toBottomOf="@+id/cl_gz"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintStart_toEndOf="@+id/iv_gz_head"
+            app:layout_constraintTop_toTopOf="@+id/iv_gz_head"
+            app:layout_constraintBottom_toBottomOf="@+id/cl_gz"
+            android:layout_marginBottom="5dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_gz_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="吴晓军"
+                    android:textColor="#3d444d"
+                    android:textSize="15sp"/>
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/ic_status_circle"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_gz_un"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:text="中山大学"/>
+            <TextView
+                android:id="@+id/tv_gz_intro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="8sp"
+                android:text="表表特约校园技术达人，我喜欢…"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_yiguanzhu"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintEnd_toEndOf="@+id/cl_gz"
+            app:layout_constraintTop_toTopOf="@+id/cl_gz"
+            app:layout_constraintBottom_toBottomOf="@+id/cl_gz"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:id="@+id/line_normal"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip"
+        android:layout_marginLeft="95dp"
+        android:layout_marginRight="95dp"
+        android:background="#ffeeeeee" />
+</LinearLayout>

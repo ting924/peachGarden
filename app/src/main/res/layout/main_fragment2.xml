@@ -61,7 +61,8 @@
             android:textSize="14sp"
         android:textAlignment="center"
             android:clickable="true"
-           ></Button></LinearLayout>
+           ></Button>
+        </LinearLayout>
        </LinearLayout>
     <LinearLayout
         android:layout_marginTop="10dp"

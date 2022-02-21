@@ -3,7 +3,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="48dp"
-    android:background="@color/white">
+    android:background="#ffececec">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -52,7 +52,7 @@
         <ImageView
             android:layout_width="17dp"
             android:layout_height="20dp"
-            android:background="@drawable/main_tab5_selector"
+            android:background="@drawable/main_tab3_selector"
             android:id="@+id/iv_tab3"/>
         <TextView
             style="@style/MainTabStyle"
@@ -70,7 +70,7 @@
         <ImageView
             android:layout_width="17dp"
             android:layout_height="20dp"
-            android:background="@drawable/main_tab3_selector"
+            android:background="@drawable/main_tab4_selector"
             android:id="@+id/iv_tab4"/>
         <TextView
             style="@style/MainTabStyle"
@@ -88,7 +88,7 @@
         <ImageView
             android:layout_width="17dp"
             android:layout_height="20dp"
-            android:background="@drawable/main_tab4_selector"
+            android:background="@drawable/main_tab5_selector"
             android:id="@+id/iv_tab5"/>
         <TextView
             style="@style/MainTabStyle"

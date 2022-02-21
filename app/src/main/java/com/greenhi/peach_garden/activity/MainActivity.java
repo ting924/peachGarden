@@ -4,10 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,9 +19,9 @@ import com.greenhi.peach_garden.fragment.MainFragment2;
 import com.greenhi.peach_garden.fragment.MainFragment3;
 import com.greenhi.peach_garden.fragment.MainFragment4;
 import com.greenhi.peach_garden.fragment.MainFragment5;
+import com.greenhi.peach_garden.utils.ScreenUtils;
 
 import java.util.ArrayList;
-
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -34,8 +34,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);//java代码中设置横屏会导致卡顿
         super.onCreate(savedInstanceState);
+        //设置全屏和状态栏透明
+        ScreenUtils.transparencyBar(this);
+        //改变状态栏文字颜色
+        ScreenUtils.setAndroidNativeLightStatusBar(this,true);
+        //隐藏底部虚拟tab键
+        Window _window = getWindow();
+        WindowManager.LayoutParams params = _window.getAttributes();
+        params.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE;
+        _window.setAttributes(params);
         setContentView(R.layout.activity_main);
         initPager();
         initView();
@@ -44,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initPager() {
         viewPager = findViewById(R.id.viewPager);
+        viewPager.setUserInputEnabled(false);
         fragments = new ArrayList<>();
         fragments.add(MainFragment1.newInstance());
         fragments.add(MainFragment2.newInstance());
@@ -52,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fragments.add(MainFragment5.newInstance());
         MyFragmentPagerAdapter pagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager(),getLifecycle(),fragments);
         viewPager.setAdapter(pagerAdapter);
-        viewPager.setCurrentItem(0);
+        viewPager.setCurrentItem(4,false);
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
@@ -105,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvCurrent.setSelected(false);
         switch (position){
             case R.id.main_tab1:
-                viewPager.setCurrentItem(0);
+                viewPager.setCurrentItem(0,false);
             case 0:
                 ivTab1.setSelected(true);
                 tvTab1.setSelected(true);
@@ -113,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 tvCurrent = tvTab1;
                 break;
             case R.id.main_tab2:
-                viewPager.setCurrentItem(1);
+                viewPager.setCurrentItem(1,false);
             case 1:
                 ivTab2.setSelected(true);
                 tvTab2.setSelected(true);
@@ -121,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 tvCurrent = tvTab2;
                 break;
             case R.id.main_tab3:
-                viewPager.setCurrentItem(2);
+                viewPager.setCurrentItem(2,false);
             case 2:
                 ivTab3.setSelected(true);
                 tvTab3.setSelected(true);
@@ -129,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ivCurrent = ivTab3;
                 break;
             case R.id.main_tab4:
-                viewPager.setCurrentItem(3);
+                viewPager.setCurrentItem(3,false);
             case 3:
                 ivTab4.setSelected(true);
                 tvTab4.setSelected(true);
@@ -137,7 +152,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 tvCurrent = tvTab4;
                 break;
             case R.id.main_tab5:
-                viewPager.setCurrentItem(4);
+                viewPager.setCurrentItem(4,false);
             case 4:
                 tvTab5.setSelected(true);
                 ivTab5.setSelected(true);
