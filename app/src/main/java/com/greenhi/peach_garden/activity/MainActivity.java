@@ -6,8 +6,6 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -41,15 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //改变状态栏文字颜色
         ScreenUtils.setAndroidNativeLightStatusBar(this,true);
         //隐藏底部虚拟tab键
-        Window _window = getWindow();
-        WindowManager.LayoutParams params = _window.getAttributes();
-        params.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_IMMERSIVE;
-        _window.setAttributes(params);
+        ScreenUtils.hideTab(this);
         setContentView(R.layout.activity_main);
         initPager();
         initView();

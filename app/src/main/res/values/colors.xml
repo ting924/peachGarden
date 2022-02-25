@@ -14,5 +14,11 @@
     <color name="main_background_color">#BCA07C00</color>
     <color name="clicked">#3aeeeeee</color>
     <color name="third_text_color">#ff999999</color>
+    <color name="set_tab_color_selected">#ff6A4028</color>
+    <color name="set_tab_color_normal">#ffB99D76</color>
     <color name="main_text_color">#ff333333</color>
+    <color name="app_bg_color">#ffB99D76</color>
+    <color name="tstz_text_normal">#bdc4ce</color>
+    <color name="tstz_text_selected">#B99D76</color>
+    <color name="set_language_text_normal">#5b5e63</color>
 </resources>

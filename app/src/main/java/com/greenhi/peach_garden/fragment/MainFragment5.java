@@ -1,12 +1,14 @@
 package com.greenhi.peach_garden.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -16,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.greenhi.peach_garden.R;
+import com.greenhi.peach_garden.activity.SettingActivity;
 import com.greenhi.peach_garden.adapter.MyFragmentPagerAdapter;
 
 import java.util.ArrayList;
@@ -30,6 +33,7 @@ public class MainFragment5 extends Fragment {
 
     private TextView tvSc,tvFs,tvGz,tvXj,tvSz,tvCurrent;
     private LinearLayout llSc,llFs,llGz,llXj,llSz;
+    private ImageView ivSetting;
 
     public static MainFragment5 newInstance() {
         Bundle args = new Bundle();
@@ -104,6 +108,7 @@ public class MainFragment5 extends Fragment {
         llGz = rootView.findViewById(R.id.ll_wode_gz);
         llXj = rootView.findViewById(R.id.ll_wode_xj);
         llSz = rootView.findViewById(R.id.ll_wode_sz);
+        ivSetting = rootView.findViewById(R.id.iv_setting);
     }
 
     @Override
@@ -137,6 +142,13 @@ public class MainFragment5 extends Fragment {
             @Override
             public void onClick(View view) {
                 changeTab(4);
+            }
+        });
+        ivSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, SettingActivity.class);
+                mContext.startActivity(intent);
             }
         });
     }

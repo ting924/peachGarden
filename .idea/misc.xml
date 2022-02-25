@@ -12,13 +12,30 @@
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/main_tab5_selector.xml" value="0.22037037037037038" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/main_tab_text_selector.xml" value="0.22037037037037038" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/sc_tab_text_selector.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/seekbar_progress_drawable.xml" value="0.14583333333333334" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/set_language_text_selector.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/set_tstz_text_selector.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/setting_button_bg.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/setting_button_bg_white.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/setting_seekbar_progress_drawable.xml" value="0.14583333333333334" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/setting_tab_bg_selector.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/setting_tab_ic_selector.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/setting_tab_ic_selector1.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/setting_tab_ic_selector2.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/setting_tab_ic_selector3.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/setting_tab_ic_selector4.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/setting_tab_ic_selector5.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/setting_tab_ic_selector6.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/setting_tab_ic_selector7.xml" value="0.26979166666666665" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/shape_textbg_red.xml" value="0.26979166666666665" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/shiguan_btn_selector.xml" value="0.26979166666666665" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/shoucang_button.xml" value="0.26979166666666665" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/tab_home_selector.xml" value="0.22037037037037038" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/activity_main.xml" value="0.19067028985507245" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/activity_setting.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/bottom_layout.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/fragment1.xml" value="0.18704710144927536" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/fragment_set1.xml" value="0.19429347826086957" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/layout_top.xml" value="0.176" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/main_fragment1.xml" value="0.17300724637681159" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/main_fragment2.xml" value="0.18704710144927536" />
@@ -37,6 +54,13 @@
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/sc_fragment3.xml" value="0.2028985507246377" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/sc_fragment4.xml" value="0.2028985507246377" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/sc_fragment5.xml" value="0.2028985507246377" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/set_fragment1.xml" value="0.19429347826086957" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/set_fragment2.xml" value="0.176" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/set_fragment3.xml" value="0.19429347826086957" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/set_fragment4.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/set_fragment5.xml" value="0.19429347826086957" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/set_fragment6.xml" value="0.19429347826086957" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/set_fragment7.xml" value="0.19429347826086957" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/wode_fragment1.xml" value="0.2028985507246377" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/wode_fragment2.xml" value="0.2028985507246377" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/wode_fragment3.xml" value="0.2028985507246377" />
