@@ -7,4 +7,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "peach-garden"
-include ':app'
+include ':app',':pictureLibrary'

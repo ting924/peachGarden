@@ -21,4 +21,6 @@
     <color name="tstz_text_normal">#bdc4ce</color>
     <color name="tstz_text_selected">#B99D76</color>
     <color name="set_language_text_normal">#5b5e63</color>
+    <color name="guanzhu_border">#D12324</color>
+    <color name="shizhai_background_color">#BCA07C</color>
 </resources>
