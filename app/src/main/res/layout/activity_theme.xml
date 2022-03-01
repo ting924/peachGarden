@@ -49,6 +49,7 @@
                     android:textColor="@color/white"></TextView>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/t1"
                 android:clickable="true"
                 android:layout_marginTop="30dp"
                 android:paddingTop="30dp"
@@ -74,6 +75,7 @@
                     android:textColor="@color/white"></TextView>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/t2"
                 android:clickable="true"
                 android:layout_marginTop="30dp"
                 android:paddingTop="30dp"
@@ -99,6 +101,7 @@
                     android:textColor="@color/white"></TextView>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/t3"
                 android:clickable="true"
                 android:layout_marginTop="30dp"
                 android:paddingTop="30dp"
@@ -124,6 +127,7 @@
                     android:textColor="@color/white"></TextView>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/t4"
                 android:clickable="true"
                 android:layout_marginTop="30dp"
                 android:paddingTop="30dp"
@@ -149,6 +153,7 @@
                     android:textColor="@color/white"></TextView>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/t5"
                 android:clickable="true"
                 android:layout_marginTop="30dp"
                 android:paddingTop="30dp"
@@ -174,6 +179,7 @@
                     android:textColor="@color/white"></TextView>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/t6"
                 android:clickable="true"
                 android:layout_marginTop="30dp"
                 android:paddingTop="30dp"
@@ -199,6 +205,7 @@
                     android:textColor="@color/white"></TextView>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/t7"
                 android:clickable="true"
                 android:layout_marginTop="30dp"
                 android:paddingTop="30dp"

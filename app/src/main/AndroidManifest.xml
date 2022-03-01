@@ -26,14 +26,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.poetry_hall.TranslationActivity" />
-        <activity android:name=".activity.poetry_hall.SearchActivity" />
-        <activity android:name=".activity.poetry_hall.PoeterActivity" />
-        <activity android:name=".activity.poetry_hall.GrandActivity" />
-        <activity android:name=".activity.poetry_hall.DynastyActivity" />
-        <activity android:name=".activity.poetry_hall.ThemeActivity" />
-        <activity android:name=".activity.poetry_hall.PoemcourseActivity" />
-        <activity android:name=".activity.poetry_hall.ResultsActivity" />
+        <activity android:name=".activity.poetry_hall.TranslationActivity" android:screenOrientation="landscape" />
+        <activity android:name=".activity.poetry_hall.SearchActivity" android:screenOrientation="landscape" />
+        <activity android:name=".activity.poetry_hall.PoeterActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".activity.poetry_hall.GrandActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".activity.poetry_hall.DynastyActivity" android:screenOrientation="landscape" />
+        <activity android:name=".activity.poetry_hall.ThemeActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".activity.poetry_hall.PoemcourseActivity" android:screenOrientation="landscape" />
+        <activity android:name=".activity.poetry_hall.TodayreadActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".activity.poetry_hall.NoneActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".activity.poetry_hall.TitleResultsActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".activity.poetry_hall.PoemContentActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".activity.poetry_hall.TranContentActivity" android:screenOrientation="landscape"/>
     </application>
 
 </manifest>

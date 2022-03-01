@@ -18,7 +18,6 @@ import com.greenhi.peach_garden.activity.MainActivity;
 
 public class TranslationActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageButton back_btn;
-    private EditText editText;
     private Button lg_btn1;
     private Button lg_btn2;
     private Button lg_btn3;
@@ -40,19 +39,7 @@ public class TranslationActivity extends AppCompatActivity implements View.OnCli
         lg_btn4=findViewById(R.id.Japan);
         lg_btn5=findViewById(R.id.Korean);
         lg_btn5.setOnClickListener(this);
-        editText=findViewById(R.id.btn_search);
-        editText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-               if(KeyEvent.KEYCODE_ENTER==i&& keyEvent.getAction()==KeyEvent.ACTION_DOWN){
-                   String content=editText.getText().toString();
-                   Intent intent=new Intent(TranslationActivity.this,SearchActivity.class);
-                   intent.putExtra("language",content);
-                   startActivity(intent);
-               }
-                return false;
-            }
-        });
+
     }
 
     @Override
@@ -64,29 +51,29 @@ public class TranslationActivity extends AppCompatActivity implements View.OnCli
 
             case R.id.English:
                 Intent intent=new Intent(TranslationActivity.this,SearchActivity.class);
-                intent.putExtra("language","English");
+                intent.putExtra("language","英");
                 startActivity(intent);
                 break;
             case R.id.French:
                 Intent intent1=new Intent(TranslationActivity.this,SearchActivity.class);
-                intent1.putExtra("language","French");
+                intent1.putExtra("language","法");
                 startActivity(intent1);
                 break;
             case R.id.Japan:
                 Intent intent2=new Intent(TranslationActivity.this,SearchActivity.class);
-                intent2.putExtra("language","Japan");
+                intent2.putExtra("language","日");
                 startActivity(intent2);
                 break;
 
             case R.id.Russian:
                 Intent intent3=new Intent(TranslationActivity.this,SearchActivity.class);
-                intent3.putExtra("language","Russian");
+                intent3.putExtra("language","德");
                 startActivity(intent3);
                 break;
 
             case R.id.Korean:
                 Intent intent4=new Intent(TranslationActivity.this,SearchActivity.class);
-                intent4.putExtra("language","Korean");
+                intent4.putExtra("language","韩");
                 startActivity(intent4);
                 break;
 

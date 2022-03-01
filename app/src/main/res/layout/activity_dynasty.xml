@@ -48,6 +48,7 @@
               android:textColor="@color/white"></TextView>
       </LinearLayout>
       <LinearLayout
+          android:id="@+id/tang"
       android:clickable="true"
       android:layout_marginTop="30dp"
       android:paddingTop="30dp"
@@ -73,6 +74,7 @@
           android:textColor="@color/white"></TextView>
   </LinearLayout>
       <LinearLayout
+          android:id="@+id/song"
           android:clickable="true"
           android:layout_marginTop="30dp"
           android:paddingTop="30dp"
@@ -98,6 +100,7 @@
               android:textColor="@color/white"></TextView>
       </LinearLayout>
       <LinearLayout
+          android:id="@+id/yuan"
           android:clickable="true"
           android:layout_marginTop="30dp"
           android:paddingTop="30dp"
@@ -123,6 +126,7 @@
               android:textColor="@color/white"></TextView>
       </LinearLayout>
       <LinearLayout
+          android:id="@+id/ming"
           android:clickable="true"
           android:layout_marginTop="30dp"
           android:paddingTop="30dp"
@@ -148,6 +152,7 @@
               android:textColor="@color/white"></TextView>
       </LinearLayout>
       <LinearLayout
+          android:id="@+id/qing"
           android:clickable="true"
           android:layout_marginTop="30dp"
           android:paddingTop="30dp"
@@ -173,6 +178,7 @@
               android:textColor="@color/white"></TextView>
       </LinearLayout>
       <LinearLayout
+          android:id="@+id/han"
           android:clickable="true"
           android:layout_marginTop="30dp"
           android:paddingTop="30dp"
@@ -198,6 +204,7 @@
               android:textColor="@color/white"></TextView>
       </LinearLayout>
       <LinearLayout
+          android:id="@+id/qin"
           android:clickable="true"
           android:layout_marginTop="30dp"
           android:paddingTop="30dp"

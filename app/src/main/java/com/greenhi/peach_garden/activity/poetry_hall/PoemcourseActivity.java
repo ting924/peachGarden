@@ -66,7 +66,7 @@ public class PoemcourseActivity extends AppCompatActivity {
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if(KeyEvent.KEYCODE_ENTER==i&& keyEvent.getAction()==KeyEvent.ACTION_DOWN){
                     String content=editText.getText().toString();
-                    Intent intent=new Intent(PoemcourseActivity.this,ResultsActivity.class);
+                    Intent intent=new Intent(PoemcourseActivity.this,NoneActivity.class);
                     intent.putExtra("content",content);
                     Toast.makeText(PoemcourseActivity.this,content,Toast.LENGTH_LONG).show();
                     startActivity(intent);

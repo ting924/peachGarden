@@ -3,7 +3,6 @@ package com.greenhi.peach_garden.fragment;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -18,18 +17,16 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.greenhi.peach_garden.R;
 import com.greenhi.peach_garden.activity.MainActivity;
 import com.greenhi.peach_garden.activity.poetry_hall.DynastyActivity;
 import com.greenhi.peach_garden.activity.poetry_hall.GrandActivity;
+import com.greenhi.peach_garden.activity.poetry_hall.PoemContentActivity;
 import com.greenhi.peach_garden.activity.poetry_hall.PoemcourseActivity;
 import com.greenhi.peach_garden.activity.poetry_hall.PoeterActivity;
-import com.greenhi.peach_garden.activity.poetry_hall.ResultsActivity;
-import com.greenhi.peach_garden.activity.poetry_hall.SearchActivity;
 import com.greenhi.peach_garden.activity.poetry_hall.ThemeActivity;
+import com.greenhi.peach_garden.activity.poetry_hall.TodayreadActivity;
 import com.greenhi.peach_garden.activity.poetry_hall.TranslationActivity;
 
 
@@ -46,6 +43,7 @@ public class MainFragment2 extends Fragment implements View.OnClickListener{
     private ImageButton grand_btn;
     private ImageButton theme_btn;
     private ImageButton back_btn;
+    private ImageButton jumpToToday;
     private EditText editText;
 
     public static MainFragment2 newInstance() {
@@ -75,9 +73,9 @@ public class MainFragment2 extends Fragment implements View.OnClickListener{
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if(KeyEvent.KEYCODE_ENTER==i&& keyEvent.getAction()==KeyEvent.ACTION_DOWN){
                     String content=editText.getText().toString();
-                    Intent intent=new Intent(getActivity(), ResultsActivity.class);
+                    Intent intent=new Intent(getActivity(), PoemContentActivity.class);
                     Toast.makeText(getActivity(),content,Toast.LENGTH_LONG).show();
-                    intent.putExtra("language",content);
+                    intent.putExtra("title",content);
                     startActivity(intent);
                 }
                 return false;
@@ -91,6 +89,7 @@ public class MainFragment2 extends Fragment implements View.OnClickListener{
        grand_btn=rootView.findViewById(R.id.grand_btn);
        dynasty_btn=rootView.findViewById(R.id.dynasty_btn);
        theme_btn=rootView.findViewById(R.id.theme_btn);
+       jumpToToday=rootView.findViewById(R.id.jumpToToday);
        btn2.setOnClickListener(this);
        btn3.setOnClickListener(this);
        back_btn.setOnClickListener(this);
@@ -98,6 +97,7 @@ public class MainFragment2 extends Fragment implements View.OnClickListener{
        grand_btn.setOnClickListener(this);
        dynasty_btn.setOnClickListener(this);
        theme_btn.setOnClickListener(this);
+       jumpToToday.setOnClickListener(this);
        Log.i(Tag,btn1.toString());
         return rootView;
     }
@@ -148,6 +148,12 @@ public class MainFragment2 extends Fragment implements View.OnClickListener{
                 Activity activity6=getActivity();
                 Intent intent6=new Intent(activity6, PoemcourseActivity.class);
                 startActivity(intent6);
+                break;
+            case R.id.jumpToToday:
+                Activity activity7=getActivity();
+                Intent intent7=new Intent(activity7, TodayreadActivity.class);
+                startActivity(intent7);
+                break;
         }
     }
 }

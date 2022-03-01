@@ -24,11 +24,12 @@
             android:layout_height="wrap_content"
             android:background="@drawable/search"></ImageView>
         <EditText
+            android:id="@+id/poeter_name"
             android:layout_width="0dp"
             android:layout_weight="8"
             android:layout_height="wrap_content"
             android:background="@drawable/shape1"
-            android:hint="搜索结果"
+            android:hint="请输入诗人名称"
             android:layout_marginTop="6dp"
             android:paddingLeft="25dp"></EditText>
         <ImageView
@@ -61,54 +62,70 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginLeft="100dp">
+        android:layout_marginLeft="150dp">
        <Button
+           android:id="@+id/p1"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:background="@drawable/shape1"
-           android:layout_marginRight="28dp"></Button>
+           android:layout_marginRight="28dp"
+           android:text="李白"></Button>
         <Button
+            android:id="@+id/p2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape1"
-            android:layout_marginRight="28dp"></Button>
+            android:layout_marginRight="28dp"
+                android:text="王维"></Button>
         <Button
+            android:id="@+id/p3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape1"
-            android:layout_marginRight="28dp"></Button>
+            android:layout_marginRight="28dp"
+            android:text="王勃"></Button>
         <Button
+            android:id="@+id/p4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape1"
-            android:layout_marginRight="28dp"></Button>
+            android:layout_marginRight="28dp"
+            android:text="李清照"></Button>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="25dp"
-        android:layout_marginLeft="100dp">
+        android:layout_marginLeft="150dp">
         <Button
+            android:id="@+id/p5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape1"
-            android:layout_marginRight="28dp"></Button>
+            android:layout_marginRight="28dp"
+            android:text="苏轼"></Button>
         <Button
+            android:id="@+id/p6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape1"
-            android:layout_marginRight="28dp"></Button>
+            android:layout_marginRight="28dp"
+            android:text="曹植"></Button>
         <Button
+            android:id="@+id/p7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape1"
-            android:layout_marginRight="28dp"></Button>
+            android:layout_marginRight="28dp"
+            android:text="辛弃疾"></Button>
         <Button
+            android:id="@+id/p8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape1"
-            android:layout_marginRight="28dp"></Button>
+            android:layout_marginRight="28dp"
+            android:text="孟浩然"></Button>
     </LinearLayout>
 
 
