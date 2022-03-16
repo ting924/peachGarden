@@ -14,12 +14,20 @@
             android:background="@drawable/arrow_back"/>
     </LinearLayout>
 <RelativeLayout
+    android:padding="15dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_background_color">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_list">
     <TextView
+        android:padding="10dp"
         android:id="@+id/tracontent"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:textStyle="bold"
+        android:textSize="18sp"/></ScrollView>
 </RelativeLayout>
 </LinearLayout>

@@ -45,5 +45,6 @@ dependencies {
     //气泡弹窗
     implementation 'me.kareluo.ui:popmenu:1.1.0'
     implementation 'com.zhy:base-rvadapter:3.0.3'
+	implementation 'com.squareup.okhttp3:okhttp:3.4.1'
 
 }

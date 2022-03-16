@@ -30,7 +30,6 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     private String lg;
     private List<String>history=new ArrayList<>();
     private GridView gridView;
-    private RecordDao recordDao;
     private EditText editText;
     private Button button;
     private ArrayAdapter<String>adapter;
@@ -40,7 +39,8 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        history.add("静夜思");
+        history.add("茅屋为秋风所破歌");
+        history.add("登高");
         button=findViewById(R.id.clear_history);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

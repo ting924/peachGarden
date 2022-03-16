@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/shape1"
             android:layout_marginRight="28dp"
-                android:text="王维"></Button>
+                android:text="杜甫"></Button>
         <Button
             android:id="@+id/p3"
             android:layout_width="wrap_content"

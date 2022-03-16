@@ -37,6 +37,7 @@ public class TranslationActivity extends AppCompatActivity implements View.OnCli
         lg_btn3=findViewById(R.id.Russian);
        lg_btn3.setOnClickListener(this);
         lg_btn4=findViewById(R.id.Japan);
+        lg_btn4.setOnClickListener(this);
         lg_btn5=findViewById(R.id.Korean);
         lg_btn5.setOnClickListener(this);
 
@@ -51,29 +52,29 @@ public class TranslationActivity extends AppCompatActivity implements View.OnCli
 
             case R.id.English:
                 Intent intent=new Intent(TranslationActivity.this,SearchActivity.class);
-                intent.putExtra("language","英");
+                intent.putExtra("language","english");
                 startActivity(intent);
                 break;
             case R.id.French:
                 Intent intent1=new Intent(TranslationActivity.this,SearchActivity.class);
-                intent1.putExtra("language","法");
+                intent1.putExtra("language","french");
                 startActivity(intent1);
                 break;
             case R.id.Japan:
                 Intent intent2=new Intent(TranslationActivity.this,SearchActivity.class);
-                intent2.putExtra("language","日");
+                intent2.putExtra("language","japanese");
                 startActivity(intent2);
                 break;
 
             case R.id.Russian:
                 Intent intent3=new Intent(TranslationActivity.this,SearchActivity.class);
-                intent3.putExtra("language","德");
+                intent3.putExtra("language","russian");
                 startActivity(intent3);
                 break;
 
             case R.id.Korean:
                 Intent intent4=new Intent(TranslationActivity.this,SearchActivity.class);
-                intent4.putExtra("language","韩");
+                intent4.putExtra("language","korean");
                 startActivity(intent4);
                 break;
 

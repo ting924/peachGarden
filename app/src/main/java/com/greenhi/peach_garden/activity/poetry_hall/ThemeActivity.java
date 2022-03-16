@@ -37,7 +37,7 @@ public class ThemeActivity extends AppCompatActivity implements View.OnClickList
                 finish();
                 break;
             case R.id.t1:
-                go("田园");
+                go("忧国忧民");
                 break;
             case R.id.t2:
                 go("山水");

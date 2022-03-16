@@ -62,7 +62,7 @@ public class PoeterActivity extends AppCompatActivity implements View.OnClickLis
                 go("李白");
                 break;
             case R.id.p2:
-                go("王维");
+                go("杜甫");
                 break;
             case R.id.p3:
                 go("王勃");
