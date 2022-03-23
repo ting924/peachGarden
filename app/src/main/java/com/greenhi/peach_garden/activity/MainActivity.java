@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initPager();
         initView();
         setListener();
-        UserMessage.saveUserInfo(this,1);
     }
 
     private void initPager() {

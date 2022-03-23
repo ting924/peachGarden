@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.giftedcat.picture.lib.selector.MultiImageSelectorActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@drawable/login1" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/login2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="-15dp"
+            android:background="@drawable/login3" />
+
+        <EditText
+            android:id="@+id/et_username"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:hint="新用户"
+            android:singleLine="true"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/ts_password"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="-15dp"
+            android:background="@drawable/login4" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:hint="密码"
+            android:inputType="textPassword"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tss_password"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="-15dp"
+            android:background="@drawable/login4" />
+
+        <EditText
+            android:id="@+id/ett_password"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:hint="确认密码"
+            android:inputType="textPassword"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/bt_log"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="注册"
+            android:textColor="@color/back_hui"
+            android:layout_marginRight="20dp"
+            android:background="#D5A661"/>
+
+        <Button
+            android:id="@+id/bt_bos"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textColor="@color/back_hui"
+            android:background="#D5A661"
+            android:text="返回登录"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+

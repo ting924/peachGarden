@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.giftedcat.picture.lib.selector.MultiImageSelectorActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/login1" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/login2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="-15dp"
+            android:background="@drawable/login3" />
+
+        <EditText
+            android:id="@+id/et_username"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:hint="用户名"
+            android:singleLine="true"
+            />
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/newUser"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="注册用户"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="1dp"
+                android:layout_marginLeft="8dp"
+                android:background="#5C6A68" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/ts_password"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="-15dp"
+            android:background="@drawable/login4" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:hint="密码"
+            android:inputType="textPassword"
+            />
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/forgetPassword"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="忘记密码"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="1dp"
+                android:layout_marginLeft="8dp"
+                android:background="#5C6A68" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/bt_log"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="登录"
+            android:textColor="@color/back_hui"
+            android:layout_marginRight="20dp"
+            android:background="#D5A661"/>
+
+        <Button
+            android:id="@+id/bt_bos"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textColor="@color/back_hui"
+            android:background="#D5A661"
+            android:text="注册"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+

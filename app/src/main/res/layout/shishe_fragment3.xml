@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/shizhai_background_color">
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="62dp"
+        android:layout_x="82dp"
+        android:layout_y="56dp"
+        android:background="@drawable/textview_border"
+        android:gravity="center"
+        android:text="飞花     >"
+        android:textColor="#756C6C"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="62dp"
+        android:layout_x="282dp"
+        android:layout_y="56dp"
+        android:background="@drawable/textview_border"
+        android:gravity="center"
+        android:text="集锦     >"
+        android:textColor="#756C6C"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="62dp"
+        android:layout_x="82dp"
+        android:layout_y="180dp"
+        android:background="@drawable/textview_border"
+        android:gravity="center"
+        android:text="曲水     >"
+        android:textColor="#756C6C"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="62dp"
+        android:layout_x="282dp"
+        android:layout_y="180dp"
+        android:background="@drawable/textview_border"
+        android:gravity="center"
+        android:text="擂台     >"
+        android:textColor="#756C6C"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="62dp"
+        android:layout_x="482dp"
+        android:layout_y="120dp"
+        android:background="@drawable/textview_border"
+        android:gravity="center"
+        android:text="你画我猜   >"
+        android:textColor="#756C6C"
+        android:textSize="20dp" />
+</AbsoluteLayout>
