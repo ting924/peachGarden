@@ -1,26 +1,36 @@
 package com.greenhi.peach_garden.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.greenhi.peach_garden.R;
+import com.greenhi.peach_garden.activity.MainActivity;
 import com.greenhi.peach_garden.item.ItemDataFS;
+import com.greenhi.peach_garden.item.ItemUser;
+import com.greenhi.peach_garden.utils.UserMessage;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import java.util.List;
 
+import cz.msebera.android.httpclient.Header;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RecyclerAdapterFS extends RecyclerView.Adapter<RecyclerAdapterFS.ViewHolder> {
 
-    private List<ItemDataFS> fsList;
+    private List<ItemUser> fsList;
+    private int id;
 
-    public RecyclerAdapterFS(List<ItemDataFS> fsList) {
+    public RecyclerAdapterFS(List<ItemUser> fsList,int id) {
         this.fsList = fsList;
+        this.id=id;
     }
 
     @NonNull
@@ -33,11 +43,35 @@ public class RecyclerAdapterFS extends RecyclerView.Adapter<RecyclerAdapterFS.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        ItemUser data = fsList.get(position);
+        holder.username.setText(data.getUserName());
+        holder.intro.setText(data.getBriefIntroduction());
+        holder.head.setImageResource(R.drawable.default_circle_head);
+        holder.guanzhu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int position= holder.getAdapterPosition();
+                String url = "http://47.108.176.163:7777/focus/add?uid="+id+"&fid="+fsList.get(position).getId();
+                AsyncHttpClient client=new AsyncHttpClient();
+                client.post(url, new AsyncHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, byte[] bytes) {
+                        try{
+                            //点击关注按钮，变为已关注按钮
+                          holder.guanzhu.setImageResource(R.drawable.ic_yiguanzhu);
+                            //刷新关注list
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
+                    }
+                    @Override
+                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                        Log.d("error","关注失败");
 
-        ItemDataFS data = fsList.get(position);
-        holder.username.setText(data.getUsername());
-        holder.intro.setText(data.getIntro());
-        holder.head.setImageResource(data.getHeadID());
+                    }
+                });
+            }
+        });
 
     }
 
@@ -49,6 +83,7 @@ public class RecyclerAdapterFS extends RecyclerView.Adapter<RecyclerAdapterFS.Vi
     class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView username,intro;
+        ImageView guanzhu;
         CircleImageView head;
 
         public ViewHolder(@NonNull View itemView) {
@@ -56,6 +91,7 @@ public class RecyclerAdapterFS extends RecyclerView.Adapter<RecyclerAdapterFS.Vi
             this.username = itemView.findViewById(R.id.tv_fs_name);
             this.intro = itemView.findViewById(R.id.tv_fs_intro);
             this.head = itemView.findViewById(R.id.iv_fs_head);
+            this.guanzhu=itemView.findViewById(R.id.fensi_guanzhu);
         }
     }
 }

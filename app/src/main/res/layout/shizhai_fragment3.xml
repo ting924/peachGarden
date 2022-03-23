@@ -42,6 +42,7 @@
         </RelativeLayout>
 
         <EditText
+            android:id="@+id/sz_cz_edittext"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_margin="10dp"
@@ -106,6 +107,6 @@
                 android:background="@drawable/ic_play_circle_outline" />
         </RelativeLayout>
 
-    </LinearLayout>
+       </LinearLayout>
 </ScrollView>
 </FrameLayout>

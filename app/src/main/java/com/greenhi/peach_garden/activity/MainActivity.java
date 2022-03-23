@@ -18,6 +18,7 @@ import com.greenhi.peach_garden.fragment.MainFragment3;
 import com.greenhi.peach_garden.fragment.MainFragment4;
 import com.greenhi.peach_garden.fragment.MainFragment5;
 import com.greenhi.peach_garden.utils.ScreenUtils;
+import com.greenhi.peach_garden.utils.UserMessage;
 
 import java.util.ArrayList;
 
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initPager();
         initView();
         setListener();
+        UserMessage.saveUserInfo(this,1);
     }
 
     private void initPager() {

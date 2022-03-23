@@ -2,9 +2,11 @@ package com.greenhi.peach_garden.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,19 +16,28 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.greenhi.peach_garden.R;
 import com.greenhi.peach_garden.adapter.RecyclerAdapterGZ;
+import com.greenhi.peach_garden.adapter.RecyclerAdapterGuanZhu;
 import com.greenhi.peach_garden.item.ItemDataGZ;
+import com.greenhi.peach_garden.item.ItemUser;
+import com.greenhi.peach_garden.utils.JsonParse;
+import com.greenhi.peach_garden.utils.UserMessage;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import cz.msebera.android.httpclient.Header;
+
 public class WodeFragment3 extends Fragment {
     private Context mContext;
     private View rootView;
+    private int id;
 
     private RecyclerView recyclerView;
     private RecyclerAdapterGZ recyclerAdapter;
 
-    private List<ItemDataGZ> gzList;
+    private List<ItemUser> users;
 
     public static WodeFragment3 newInstance(){
         Bundle args = new Bundle();
@@ -47,24 +58,44 @@ public class WodeFragment3 extends Fragment {
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.wode_fragment3, container, false);
         }
-        initData();
         initView();
+        getUsers();
         return rootView;
     }
 
-    private void initData() {
-        gzList = new ArrayList<>();
-        gzList.add(new ItemDataGZ("吴晓军","中山大学","表表特约校园技术达人，我喜欢…",R.drawable.default_circle_head));
-        gzList.add(new ItemDataGZ("罗佳馨","湖南大学","表表特约安利达人，每天给大家…",R.drawable.default_circle_head));
-        gzList.add(new ItemDataGZ("祝云凯","浙江农林大学暨阳学院","喜欢你怎么办~",R.drawable.default_circle_head));
-        gzList.add(new ItemDataGZ("常熙","贵州亚太职业学院","全民是一个有故事的昵称 圣普勒…",R.drawable.default_circle_head));
-    }
+
 
     private void initView() {
+        id= UserMessage.getUserInfo(getContext());
         recyclerView = rootView.findViewById(R.id.rv_gz);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext,LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerAdapter = new RecyclerAdapterGZ(gzList);
-        recyclerView.setAdapter(recyclerAdapter);
+
     }
+
+    private void getUsers(){
+        String url = "http://47.108.176.163:7777/focus/selectByUid?uid="+id;
+        AsyncHttpClient client=new AsyncHttpClient();
+        client.get(url, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] bytes) {
+                try{
+                    String json=new String(bytes,"utf-8");
+                    Log.d("user",json);
+                    users = JsonParse.Getuser(json);
+                    recyclerAdapter = new RecyclerAdapterGZ(users);
+                    recyclerView.setAdapter(recyclerAdapter);
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Toast.makeText(getContext(),"关注人获取失败",Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }

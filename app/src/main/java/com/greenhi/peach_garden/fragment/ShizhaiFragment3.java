@@ -1,5 +1,7 @@
 package com.greenhi.peach_garden.fragment;
 
+import static android.service.controls.ControlsProviderService.TAG;
+
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
@@ -13,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -103,6 +106,7 @@ public class ShizhaiFragment3 extends Fragment {
                 mSelectList.clear();
                 mSelectList.addAll(select);
                 adapter.notifyDataSetChanged();
+                Log.d("mSelectList" ,"mSelectList"+mSelectList);
             }
         }
     }

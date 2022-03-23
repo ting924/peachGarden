@@ -1,39 +1,44 @@
 package com.greenhi.peach_garden.item;
 
 public class ItemDataSZ {
-    private String username,time,text;
-    private int headID,likes,comments;
+    private String userName,createTime,dynamicContent;
+    private int image,uid,loveNumber,commentNumber;
 
-    public ItemDataSZ(String username, String time, String text, int headID, int likes, int comments) {
-        this.username = username;
-        this.time = time;
-        this.text = text;
-        this.headID = headID;
-        this.likes = likes;
-        this.comments = comments;
+    public ItemDataSZ(String userName, String createTime, String dynamicContent, int image,int uid, int loveNumber, int commentNumber) {
+        this.userName = userName;
+        this.createTime = createTime;
+        this.dynamicContent = dynamicContent;
+        this.image=image;
+        this.uid = uid;
+        this.loveNumber = loveNumber;
+        this.commentNumber = commentNumber;
     }
 
     public String getUsername() {
-        return username;
+        return userName;
     }
 
     public String getTime() {
-        return time;
+        return createTime;
     }
 
     public String getText() {
-        return text;
+        return dynamicContent;
+    }
+
+    public int getHead() {
+        return image;
     }
 
     public int getHeadID() {
-        return headID;
+        return uid;
     }
 
     public int getLikes() {
-        return likes;
+        return loveNumber;
     }
 
     public int getComments() {
-        return comments;
+        return commentNumber;
     }
 }

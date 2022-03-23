@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.greenhi.peach_garden.R;
 import com.greenhi.peach_garden.item.ItemDataGZ;
+import com.greenhi.peach_garden.item.ItemUser;
 
 import java.util.List;
 
@@ -17,9 +18,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RecyclerAdapterGZ extends RecyclerView.Adapter<RecyclerAdapterGZ.ViewHolder> {
 
-    private List<ItemDataGZ> gzList;
+    private List<ItemUser> gzList;
 
-    public RecyclerAdapterGZ(List<ItemDataGZ> gzList) {
+    public RecyclerAdapterGZ(List<ItemUser> gzList) {
         this.gzList = gzList;
     }
 
@@ -34,11 +35,11 @@ public class RecyclerAdapterGZ extends RecyclerView.Adapter<RecyclerAdapterGZ.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        ItemDataGZ data = gzList.get(position);
-        holder.username.setText(data.getUsername());
-        holder.university.setText(data.getUniversity());
-        holder.intro.setText(data.getIntro());
-        holder.head.setImageResource(data.getHeadID());
+        ItemUser data = gzList.get(position);
+        holder.username.setText(data.getUserName());
+        holder.university.setText(data.getOccupation());
+        holder.intro.setText(data.getBriefIntroduction());
+        holder.head.setImageResource(R.drawable.default_circle_head);
 
     }
 
