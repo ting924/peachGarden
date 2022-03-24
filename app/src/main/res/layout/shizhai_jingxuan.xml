@@ -61,7 +61,7 @@
     <com.ms.square.android.expandabletextview.ExpandableTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5.0dip"
+        android:layout_marginLeft="10.0dip"
         android:layout_marginTop="5.0dip"
         android:layout_marginBottom="7dp"
         android:layout_marginRight="16.0dip"
@@ -90,9 +90,9 @@
         android:id="@+id/sz_jx_ninegrid"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16.0dip"
-        android:layout_marginTop="14.0dip"
-        android:layout_marginRight="16.0dip"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginTop="10.0dip"
+        android:layout_marginRight="10.0dip"
         android:visibility="gone"
         app:imgGap="5.0dip"
         app:showStyle="grid" />
@@ -104,6 +104,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal">
 
         <com.sackcentury.shinebuttonlib.ShineButton

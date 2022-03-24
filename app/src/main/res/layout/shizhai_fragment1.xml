@@ -3,14 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.ShizhaiFragment1">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.ShizhaiFragment2">
+
+    <com.scwang.smartrefresh.header.StoreHouseHeader
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/sz_gz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"/>
+    <com.scwang.smartrefresh.layout.footer.BallPulseFooter
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
 
 </FrameLayout>

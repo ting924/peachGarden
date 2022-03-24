@@ -4,7 +4,7 @@ public class RecordsDTO {
     private Integer id;
     private Integer uid;
     private String dynamicContent;
-    private String imgCount;
+    private Integer imgCount;
     private Integer loveNumber;
     private Integer commentNumber;
     private String createTime;
@@ -34,11 +34,11 @@ public class RecordsDTO {
         this.dynamicContent = dynamicContent;
     }
 
-    public String getImgCount() {
+    public Integer getImgCount() {
         return imgCount;
     }
 
-    public void setImgCount(String imgCount) {
+    public void setImgCount(Integer imgCount) {
         this.imgCount = imgCount;
     }
 

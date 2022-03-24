@@ -41,8 +41,8 @@ public class ShizhaiFragment2 extends Fragment {
     private Context mContext;
     private View rootView;
     private SmartRefreshLayout refreshLayout;
-    private int page=0;
-    private int pageSize=8;
+    private int page = 0;
+    private int pageSize = 8;
     private int id;
     private int totalNum;
 
@@ -51,7 +51,7 @@ public class ShizhaiFragment2 extends Fragment {
 
     private List<RecordsDTO> jxList;
 
-    public static ShizhaiFragment2 newInstance(){
+    public static ShizhaiFragment2 newInstance() {
         Bundle args = new Bundle();
         ShizhaiFragment2 fragment = new ShizhaiFragment2();
         fragment.setArguments(args);
@@ -75,53 +75,52 @@ public class ShizhaiFragment2 extends Fragment {
     }
 
 
-
     private void initView() {
-        id= UserMessage.getUserInfo(getContext());
+        id = UserMessage.getUserInfo(getContext());
         recyclerView = rootView.findViewById(R.id.sz_jx);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(mContext,2);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(mContext, 2);
         recyclerView.setLayoutManager(gridLayoutManager);
-        ((SimpleItemAnimator)recyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
+        ((SimpleItemAnimator) recyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
         getAllDynamics(true);
-        refreshLayout=rootView.findViewById(R.id.srl);
+        refreshLayout = rootView.findViewById(R.id.srl);
         //下拉刷新
         refreshLayout.setOnRefreshListener(refreshLayout -> {
-            page=0;
+            page = 0;
             getAllDynamics(true);
         });
         //上拉加载
         refreshLayout.setOnLoadMoreListener(refreshLayout -> {
-           //double totalPage=Math.ceil(((double)totalNum)/pageSize);
-           getAllDynamics(false);
+            //double totalPage=Math.ceil(((double)totalNum)/pageSize);
+            getAllDynamics(false);
         });
     }
 
-    private void getAllDynamics(final boolean isRefresh){
+    private void getAllDynamics(final boolean isRefresh) {
         page++;
-        String url = "http://47.108.176.163:7777/dynamic/getAllPaging?pageNo="+page+"&pageSize="+pageSize;
-        AsyncHttpClient client=new AsyncHttpClient();
+        String url = "http://47.108.176.163:7777/dynamic/getAllPaging?pageNo=" + page + "&pageSize=" + pageSize;
+        AsyncHttpClient client = new AsyncHttpClient();
         client.get(url, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] bytes) {
-                try{
-                    String json=new String(bytes,"utf-8");
+                try {
+                    String json = new String(bytes, "utf-8");
                     jxList = JsonParse.GetAllDynamic(json);
-                    totalNum=JsonParse.GetTotalPage(json);
-                    Log.d("print",json);
+                    totalNum = JsonParse.GetTotalPage(json);
+                    Log.d("print", json);
 
-                    if(jxList!=null&&jxList.size()>0){
-                        if(page==1){
-                            recyclerAdapter = new RecyclerAdapterJingXuan(jxList,id);
+                    if (jxList != null && jxList.size() > 0) {
+                        if (page == 1) {
+                            recyclerAdapter = new RecyclerAdapterJingXuan(jxList, id);
                             recyclerView.setAdapter(recyclerAdapter);
-                        }else{
+                        } else {
                             recyclerAdapter.addAllData(jxList);
                         }
-                        if(isRefresh){
+                        if (isRefresh) {
                             refreshLayout.finishRefresh();//刷新完成(关闭刷新动画)
-                        }else{
+                        } else {
                             refreshLayout.finishLoadMore();//加载更多完成并提示(关闭刷新动画)
                         }
-                    }else {
+                    } else {
                         //加载失败
                         if (isRefresh) {
                             refreshLayout.finishRefresh(false);//刷新失败
@@ -129,7 +128,7 @@ public class ShizhaiFragment2 extends Fragment {
                             refreshLayout.finishLoadMore(false);//加载更多失败
                         }
                     }
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }

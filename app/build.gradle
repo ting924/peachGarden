@@ -38,6 +38,7 @@ dependencies {
     implementation group: 'de.hdodenhof', name: 'circleimageview', version: '2.2.0'
     implementation 'com.ms-square:expandableTextView:0.1.4'
     implementation group: 'com.jaeger.ninegridimageview', name: 'library', version: '1.1.1'
+    implementation group: 'com.squareup.picasso', name: 'picasso', version: '2.5.2'
     api 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
     implementation 'com.github.bumptech.glide:glide:4.5.0'

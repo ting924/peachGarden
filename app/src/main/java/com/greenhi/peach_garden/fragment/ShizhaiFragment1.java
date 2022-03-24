@@ -21,10 +21,12 @@ import com.greenhi.peach_garden.adapter.RecyclerAdapterGuanZhu;
 import com.greenhi.peach_garden.adapter.RecyclerAdapterJingXuan;
 import com.greenhi.peach_garden.item.ItemDataSZ;
 import com.greenhi.peach_garden.item.ItemDynamic;
+import com.greenhi.peach_garden.item.RecordsDTO;
 import com.greenhi.peach_garden.utils.JsonParse;
 import com.greenhi.peach_garden.utils.UserMessage;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,10 +38,14 @@ public class ShizhaiFragment1 extends Fragment {
 
     private Context mContext;
     private View rootView;
+    private int page = 0;
+    private int pageSize = 8;
     private int id;
 
     private RecyclerView recyclerView;
     private RecyclerAdapterGuanZhu recyclerAdapter;
+
+    private List<RecordsDTO> jxList;
 
     private List<ItemDynamic> dynamics;
 
@@ -85,6 +91,7 @@ public class ShizhaiFragment1 extends Fragment {
                 try{
                     String json=new String(bytes,"utf-8");
                     dynamics =JsonParse.Getdynamic(json);
+                    System.out.println("dynamics----> "+dynamics.toString());
                     recyclerAdapter = new RecyclerAdapterGuanZhu(dynamics);
                     recyclerView.setAdapter(recyclerAdapter);
                 }catch (Exception e){

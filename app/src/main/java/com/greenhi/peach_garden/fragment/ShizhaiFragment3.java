@@ -64,7 +64,6 @@ public class ShizhaiFragment3 extends Fragment {
     List<String> mSelectList;
 
     private API mApi;
-    private static PermissionListener mListener;
 
     public static ShizhaiFragment3 newInstance() {
         ShizhaiFragment3 fragment = new ShizhaiFragment3();

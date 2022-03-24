@@ -17,11 +17,15 @@ import com.greenhi.peach_garden.R;
 import com.greenhi.peach_garden.item.ItemDataSZ;
 import com.greenhi.peach_garden.item.ItemDynamic;
 import com.greenhi.peach_garden.utils.JsonParse;
+import com.jaeger.ninegridimageview.NineGridImageView;
+import com.jaeger.ninegridimageview.NineGridImageViewAdapter;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.ms.square.android.expandabletextview.ExpandableTextView;
 import com.sackcentury.shinebuttonlib.ShineButton;
+import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
@@ -44,6 +48,22 @@ public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapter
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapterGuanZhu.ViewHolder holder, int position) {
         ItemDynamic data = gzList.get(position);
+
+        //加载动态图片
+        Integer did = data.getId();
+        Integer imgCount = data.getImgCount();
+        if(imgCount>0){
+            List<String> urls = new ArrayList<>();
+            String baseUrl = "http://47.108.176.163:7777/img_dynamic/";
+            for (int i = 1; i < imgCount + 1; i++) {
+                urls.add(baseUrl + did + '_' + i + ".png");
+            }
+            System.out.println("urls-------------------urls: " + urls.toString());
+            holder.nineGrid.setImagesData(urls);
+            holder.nineGrid.setVisibility(View.GONE);
+            holder.nineGrid.setVisibility(View.VISIBLE);
+        }
+
         holder.comments.setText("" + data.getCommentNumber());
         holder.likes.setText("" + data.getLoveNumber());
         holder.text.setText(data.getDynamicContent());
@@ -98,6 +118,32 @@ public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapter
         private ImageView head, btnPinlun;
         private ShineButton btLike;
 
+        private NineGridImageView nineGrid;
+
+        private NineGridImageViewAdapter<String> mAdapter = new NineGridImageViewAdapter<String>() {
+            @Override
+            protected void onDisplayImage(Context context, ImageView imageView, String url) {
+             Picasso.with(context).load(url).placeholder(R.drawable.placeholder).into(imageView);
+            }
+
+            @Override
+            protected ImageView generateImageView(Context context) {
+             return super.generateImageView(context);
+            }
+
+            @Override
+            protected void onItemImageClick(Context context, ImageView imageView, int index, List<String> list) {
+             super.onItemImageClick(context, imageView, index, list);
+             //Toast.makeText(context, "image position is " + index, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            protected boolean onItemImageLongClick(Context context, ImageView imageView, int index, List<String> list) {
+             super.onItemImageLongClick(context, imageView, index, list);
+             //Toast.makeText(context, "image long click position is " + index, Toast.LENGTH_SHORT).show();
+             return true;
+            }
+        };
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -116,6 +162,9 @@ public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapter
                     Log.d("dianzan", "click2 " + checked);
                 }
             });
+
+            this.nineGrid = itemView.findViewById(R.id.sz_gz_ninegrid);
+            nineGrid.setAdapter(mAdapter);
         }
     }
 }

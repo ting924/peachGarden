@@ -5,12 +5,12 @@ public class ItemDynamic {
     private Integer uid;
     private String userName;
     private String dynamicContent;
-    private String imgCount;
+    private Integer imgCount;
     private Integer loveNumber;
     private Integer commentNumber;
     private String createTime;
 
-    public ItemDynamic(Integer id, Integer uid, String userName, String dynamicContent, String imgCount, Integer loveNumber, Integer commentNumber, String createTime) {
+    public ItemDynamic(Integer id, Integer uid, String userName, String dynamicContent, Integer imgCount, Integer loveNumber, Integer commentNumber, String createTime) {
         this.id = id;
         this.uid = uid;
         this.userName = userName;
@@ -53,11 +53,11 @@ public class ItemDynamic {
         this.dynamicContent = dynamicContent;
     }
 
-    public String getImgCount() {
+    public Integer getImgCount() {
         return imgCount;
     }
 
-    public void setImgCount(String image) {
+    public void setImgCount(Integer image) {
         this.imgCount = image;
     }
 
