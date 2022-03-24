@@ -20,9 +20,10 @@ import com.greenhi.peach_garden.fragment.MainFragment5;
 import com.greenhi.peach_garden.utils.ScreenUtils;
 import com.greenhi.peach_garden.utils.UserMessage;
 
+import java.io.File;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private ArrayList<Fragment> fragments;
 
@@ -30,6 +31,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     LinearLayout tab1,tab2,tab3,tab4,tab5;
     ImageView ivTab1,ivTab2,ivTab3,ivTab4,ivTab5,ivCurrent;
     TextView tvTab1,tvTab2,tvTab3,tvTab4,tvTab5,tvCurrent;
+
+    private static String[] PERMISSIONS_STORAGE = {
+            "android.permission.READ_EXTERNAL_STORAGE",
+            "android.permission.WRITE_EXTERNAL_STORAGE",
+            "android.permission.ACCESS_FINE_LOCATION"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initPager();
         initView();
         setListener();
+        getPermissions(PERMISSIONS_STORAGE);
     }
 
     private void initPager() {
