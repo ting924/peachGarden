@@ -156,7 +156,7 @@ public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapter
             nineGrid.setAdapter(mAdapter);
 //            nineGrid.setFocusable(false);
             nineGrid.setVisibility(View.GONE);
-//            nineGrid.setVisibility(View.VISIBLE);
+            nineGrid.setVisibility(View.VISIBLE);
 //            if (Build.VERSION.SDK_INT == Build.VERSION_CODES.LOLLIPOP) {
 //                nineGrid.setVisibility(View.INVISIBLE);
 //            } else {
