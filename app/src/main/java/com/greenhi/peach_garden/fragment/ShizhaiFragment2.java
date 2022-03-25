@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.greenhi.peach_garden.R;
 import com.greenhi.peach_garden.adapter.RecyclerAdapterGuanZhu;
 import com.greenhi.peach_garden.adapter.RecyclerAdapterJingXuan;
+import com.greenhi.peach_garden.animator.MyItemAnimator;
 import com.greenhi.peach_garden.item.ItemDataSZ;
 import com.greenhi.peach_garden.item.RecordsDTO;
 import com.greenhi.peach_garden.utils.JsonParse;
@@ -42,7 +43,7 @@ public class ShizhaiFragment2 extends Fragment {
     private View rootView;
     private SmartRefreshLayout refreshLayout;
     private int page = 0;
-    private int pageSize = 8;
+    private int pageSize = 2;
     private int id;
     private int totalNum;
 
@@ -78,12 +79,24 @@ public class ShizhaiFragment2 extends Fragment {
     private void initView() {
         id = UserMessage.getUserInfo(getContext());
         recyclerView = rootView.findViewById(R.id.sz_jx);
+
+        // 动画效果
+        //DefaultItemAnimator animator = new DefaultItemAnimator(); // RecyclerView默认的属性动画
+        MyItemAnimator animator = new MyItemAnimator(); // 我们自己的属性动画
+        animator.setRemoveDuration(2000); // 删除动画的延迟时间
+        animator.setMoveDuration(2000); // 移动动画的延迟时间
+        animator.setAddDuration(2000); // 增加动画的延迟时间
+        animator.setSupportsChangeAnimations(true); // 还要改变动画需要设置支持
+        animator.setChangeDuration(2000); // 改变动画的延迟时间
+
         GridLayoutManager gridLayoutManager = new GridLayoutManager(mContext, 2);
         recyclerView.setLayoutManager(gridLayoutManager);
-        ((SimpleItemAnimator) recyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
+        recyclerView.setItemAnimator(animator);
+//        ((SimpleItemAnimator) recyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
+
         getAllDynamics(true);
         refreshLayout = rootView.findViewById(R.id.srl);
-        //下拉刷新
+        // 下拉刷新
         refreshLayout.setOnRefreshListener(refreshLayout -> {
             page = 0;
             getAllDynamics(true);

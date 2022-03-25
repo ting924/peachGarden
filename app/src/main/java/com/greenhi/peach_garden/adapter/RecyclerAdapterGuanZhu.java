@@ -31,10 +31,35 @@ import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 
-public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapterGuanZhu.ViewHolder> {
+public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapterGuanZhu.ViewHolder> implements View.OnClickListener {
 
+    private Context context;
     private List<ItemDynamic> gzList;
-    public RecyclerAdapterGuanZhu(List<ItemDynamic> gzList) {
+
+    // 接口回调
+    private OnMyItemClickListener listener;
+    private RecyclerView recyclerView;
+
+    public void setOnMyItemClickListener(OnMyItemClickListener listener) {
+        this.listener = listener;
+    }
+
+    // 当它连接到一个RecyclerView调用的方法
+    @Override
+    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+        this.recyclerView = recyclerView;
+    }
+    // 当它与RecyclerView解除连接调用的方法
+    @Override
+    public void onDetachedFromRecyclerView(RecyclerView recyclerView) {
+        super.onDetachedFromRecyclerView(recyclerView);
+        this.recyclerView = null;
+    }
+
+
+    public RecyclerAdapterGuanZhu(Context context, List<ItemDynamic> gzList) {
+        this.context = context;
         this.gzList = gzList;
     }
 
@@ -42,10 +67,22 @@ public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapter
     @Override
     public RecyclerAdapterGuanZhu.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.shizhai_guanzhu, parent, false);
+        itemView.setOnClickListener(this);
         RecyclerAdapterGuanZhu.ViewHolder viewHolder = new RecyclerAdapterGuanZhu.ViewHolder(itemView);
-        viewHolder.setIsRecyclable(true);
+//        viewHolder.setIsRecyclable(true);
         return viewHolder;
     }
+
+    // 上面 view.setOnClickListener(this);的点击实现方法
+    @Override
+    public void onClick(View view) {
+        if (recyclerView != null && listener != null) {
+            int position = recyclerView.getChildAdapterPosition(view);
+            listener.onMyItemClick(recyclerView,view,position,gzList.get(position)); // 接口回调
+        }
+
+    }
+
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapterGuanZhu.ViewHolder holder, int position) {
@@ -108,11 +145,12 @@ public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapter
 
     @Override
     public int getItemCount() {
-        return gzList.size();
+//        return gzList.size();
+        return 2;
     }
 
 
-     class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView username, time, likes, comments;
         private ExpandableTextView text;
@@ -155,8 +193,8 @@ public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapter
             this.nineGrid = itemView.findViewById(R.id.sz_gz_ninegrid);
             nineGrid.setAdapter(mAdapter);
 //            nineGrid.setFocusable(false);
-            nineGrid.setVisibility(View.GONE);
-            nineGrid.setVisibility(View.VISIBLE);
+//            nineGrid.setVisibility(View.GONE);
+//            nineGrid.setVisibility(View.VISIBLE);
 //            if (Build.VERSION.SDK_INT == Build.VERSION_CODES.LOLLIPOP) {
 //                nineGrid.setVisibility(View.INVISIBLE);
 //            } else {
@@ -164,5 +202,31 @@ public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapter
 //            }
         }
     }
+
+    // 接口回调
+    public interface OnMyItemClickListener{
+        void onMyItemClick(RecyclerView parent, View view, int position, ItemDynamic data);
+    }
+
+
+
+    // 删除数据
+    public void remove(int position){
+        gzList.remove(position);
+        //notifyDataSetChanged();// 提醒list刷新，没有动画效果
+        notifyItemRemoved(position); // 提醒item删除指定数据，这里有RecyclerView的动画效果
+    }
+    // 添加数据
+    public void add(int position, ItemDynamic data){
+        gzList.add(position, data);
+        notifyItemInserted(position);
+    }
+    // 改变数据
+    public void change(int position, ItemDynamic data){
+        gzList.remove(position);
+        gzList.add(position, data);
+        notifyItemChanged(position);
+    }
+
 }
 

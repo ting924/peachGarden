@@ -48,7 +48,7 @@ public class RecyclerAdapterJingXuan extends RecyclerView.Adapter<RecyclerAdapte
     public RecyclerAdapterJingXuan.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.shizhai_jingxuan, parent, false);
         RecyclerAdapterJingXuan.ViewHolder viewHolder = new RecyclerAdapterJingXuan.ViewHolder(itemView);
-        viewHolder.setIsRecyclable(true);
+//        viewHolder.setIsRecyclable(true);
         return viewHolder;
     }
 
@@ -67,8 +67,8 @@ public class RecyclerAdapterJingXuan extends RecyclerView.Adapter<RecyclerAdapte
             }
             System.out.println("urls-------------------urls: " + urls.toString());
             holder.nineGrid.setImagesData(urls);
-            holder.nineGrid.setVisibility(View.GONE);
-            holder.nineGrid.setVisibility(View.VISIBLE);
+//            holder.nineGrid.setVisibility(View.GONE);
+//            holder.nineGrid.setVisibility(View.VISIBLE);
         }
 
 
