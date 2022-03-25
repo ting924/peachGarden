@@ -12,191 +12,51 @@
         android:orientation="vertical">
         <include layout="@layout/layout_top"/>
 
-        <LinearLayout
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:orientation="vertical">
+
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:layout_marginLeft="14dp"
-            android:layout_marginRight="14dp"
-            android:orientation="vertical"
-            >
+            android:id="@+id/scene_root">
+            <include layout="@layout/main_fragment5_scene_begin" />
+        </FrameLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="160dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="用户名"
-                        android:textSize="15sp"
-                        android:textColor="#06121e"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:text="男 / 产品设计"
-                        android:textSize="11sp"
-                        android:textColor="#8c9198"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:text="逆境助长天赋"
-                        android:textSize="9sp"
-                        android:textColor="#8c9198"/>
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:paddingBottom="10dp"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/ll_wode_sc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="13sp"
-                        android:text="2369" />
-                    <TextView
-                        android:id="@+id/tv_wode_sc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="13sp"
-                        android:textColor="@drawable/sc_tab_text_selector"
-                        android:text="收藏" />
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/ll_wode_fs"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="13sp"
-                        android:text="26439" />
-                    <TextView
-                        android:id="@+id/tv_wode_fs"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="13sp"
-                        android:textColor="@drawable/sc_tab_text_selector"
-                        android:text="粉丝" />
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/ll_wode_gz"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="13sp"
-                        android:text="1824" />
-                    <TextView
-                        android:id="@+id/tv_wode_gz"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="13sp"
-                        android:textColor="@drawable/sc_tab_text_selector"
-                        android:text="关注" />
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/ll_wode_xj"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="13sp"
-                        android:text="999" />
-                    <TextView
-                        android:id="@+id/tv_wode_xj"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="13sp"
-                        android:textColor="@drawable/sc_tab_text_selector"
-                        android:text="信件" />
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/ll_wode_sz"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="13sp"
-                        android:text="200" />
-                    <TextView
-                        android:id="@+id/tv_wode_sz"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="13sp"
-                        android:textColor="@drawable/sc_tab_text_selector"
-                        android:text="诗作" />
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#b99d76"/>
+        <com.greenhi.peach_garden.scroll_view.MyScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sc_scroll">
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/sc_viewPager"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
                 android:background="@color/transparent"/>
 
-        </LinearLayout>
+        </com.greenhi.peach_garden.scroll_view.MyScrollView>
+
+
+
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/iv_head"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/iv_default_head_big"
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:layout_marginLeft="50dp"/>
+        android:layout_marginLeft="50dp"
+        android:id="@+id/scene_root_head">
+        <include layout="@layout/head_scene_begin" />
+    </FrameLayout>
 
 
 </FrameLayout>

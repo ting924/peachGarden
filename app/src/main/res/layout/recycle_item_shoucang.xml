@@ -21,8 +21,8 @@
 
             <ImageView
                 android:id="@+id/iv_sc_cover"
-                android:layout_width="209dp"
-                android:layout_height="235dp"
+                android:layout_width="180dp"
+                android:layout_height="190dp"
                 app:srcCompat="@drawable/iv_shoucang1"
                 app:layout_constraintStart_toStartOf="@+id/cl_sc"
                 app:layout_constraintTop_toTopOf="@+id/cl_sc"/>
@@ -72,7 +72,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="210dp">
+            android:layout_marginTop="160dp"
+            android:paddingLeft="8dp">
 
             <ImageView
                 android:id="@+id/iv_play_arrow"
