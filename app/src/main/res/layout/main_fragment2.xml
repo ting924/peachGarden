@@ -3,67 +3,10 @@
     android:id="@+id/main_fra2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_background_color"
+    android:background="@color/shizhai_background_color"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-        <ImageButton
-            android:id="@+id/back_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_arrow_back_48px"></ImageButton>
-        <LinearLayout
-            android:layout_marginLeft="280dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/shape1"
-            >
 
-        <Button
-            android:id="@+id/btn1"
-            android:padding="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape2"
-            android:layout_marginRight="15dp"
-            android:text="诗文"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            android:textAlignment="center"
-            android:clickable="true"
-            ></Button>
-        <Button
-            android:id="@+id/btn2"
-            android:padding="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shiguan_btn_selector"
-            android:layout_marginRight="15dp"
-            android:text="译文"
-            android:textColor="@drawable/shiguan_btn_text_selector"
-            android:textSize="14sp"
-          android:textAlignment="center"
-            android:clickable="true"
-           ></Button>
-        <Button
-            android:id="@+id/btn3"
-            android:padding="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shiguan_btn_selector"
-            android:text="诗课"
-            android:textColor="@drawable/shiguan_btn_text_selector"
-            android:textSize="14sp"
-        android:textAlignment="center"
-            android:clickable="true"
-           ></Button>
-        </LinearLayout>
-       </LinearLayout>
     <LinearLayout
         android:layout_marginTop="10dp"
         android:layout_marginLeft="25dp"
@@ -96,11 +39,12 @@
                     android:paddingLeft="5dp"
                     android:paddingRight="20dp"
                     android:layout_marginRight="25dp"
-                    android:background="@color/white">
-            <ImageView
+                    android:background="@drawable/shape1">
+            <ImageButton
+                android:id="@+id/search_shi_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/search"></ImageView>
+                android:background="@drawable/search"></ImageButton>
             <EditText
                 android:id="@+id/home_search"
                 android:hint="请输入诗歌题目"
@@ -114,10 +58,11 @@
             </EditText></LinearLayout>
             <ImageButton
                 android:id="@+id/jumpToToday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:background="@drawable/info"
-                android:layout_marginRight="20dp"></ImageButton>
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="14dp"></ImageButton>
             </LinearLayout>
           <RelativeLayout
               android:layout_marginTop="50dp"
@@ -126,6 +71,7 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:padding="15dp"
+              android:layout_marginRight="25dp"
               android:background="@color/back_hui"
               >
               <LinearLayout
@@ -153,28 +99,32 @@
                       android:layout_height="wrap_content"
                       android:background="@drawable/ic_chevron_right_48px"></ImageButton>
               </LinearLayout>
+
               <LinearLayout
                   android:id="@+id/theme"
-                  android:layout_toRightOf="@id/poeter"
-                  android:layout_alignParentRight="true"
-                  android:layout_marginLeft="30dp"
-                  android:background="@color/white"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
+                  android:layout_alignParentRight="true"
+                  android:layout_marginLeft="30dp"
                   android:layout_marginBottom="30dp"
+                  android:layout_toRightOf="@id/poeter"
+                  android:background="@color/white"
                   android:orientation="horizontal">
+
                   <ImageView
-                      android:background="@drawable/g2"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"></ImageView>
-                  <TextView
-                      android:layout_marginTop="5dp"
-                      android:layout_marginRight="35dp"
-                      android:layout_marginLeft="15dp"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
+                      android:background="@drawable/g2"></ImageView>
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="15dp"
+                      android:layout_marginTop="5dp"
+                      android:layout_marginRight="35dp"
                       android:text="主题"
                       android:textSize="22sp"></TextView>
+
                   <ImageButton
                       android:id="@+id/theme_btn"
                       android:layout_width="wrap_content"

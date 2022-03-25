@@ -35,15 +35,12 @@ public class MainFragment2 extends Fragment implements View.OnClickListener{
     private Context mContext;
     private View rootView;
     private ViewGroup mContentView;
-    private Button btn1;
-    private Button btn2;
-    private Button btn3;
     private ImageButton poeter_btn;
     private ImageButton dynasty_btn;
     private ImageButton grand_btn;
     private ImageButton theme_btn;
-    private ImageButton back_btn;
     private ImageButton jumpToToday;
+    private ImageButton search_btn;
     private EditText editText;
 
     public static MainFragment2 newInstance() {
@@ -81,24 +78,19 @@ public class MainFragment2 extends Fragment implements View.OnClickListener{
                 return false;
             }
         });
-       btn1=rootView.findViewById(R.id.btn1);
-       btn2=rootView.findViewById(R.id.btn2);
-       btn3=rootView.findViewById(R.id.btn3);
-       back_btn=rootView.findViewById(R.id.back_btn);
        poeter_btn=rootView.findViewById(R.id.poeter_btn);
        grand_btn=rootView.findViewById(R.id.grand_btn);
        dynasty_btn=rootView.findViewById(R.id.dynasty_btn);
        theme_btn=rootView.findViewById(R.id.theme_btn);
        jumpToToday=rootView.findViewById(R.id.jumpToToday);
-       btn2.setOnClickListener(this);
-       btn3.setOnClickListener(this);
-       back_btn.setOnClickListener(this);
+       search_btn=rootView.findViewById(R.id.search_shi_btn);
+       search_btn.setOnClickListener(this);
        poeter_btn.setOnClickListener(this);
        grand_btn.setOnClickListener(this);
        dynasty_btn.setOnClickListener(this);
        theme_btn.setOnClickListener(this);
        jumpToToday.setOnClickListener(this);
-       Log.i(Tag,btn1.toString());
+
         return rootView;
     }
 
@@ -114,11 +106,6 @@ public class MainFragment2 extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.back_btn:
-                Activity activity=getActivity();
-                Intent intent=new Intent(activity, MainActivity.class);
-                startActivity(intent);
-                break;
             case R.id.btn2:
                 Activity activity1=getActivity();
                 Intent intent1=new Intent(activity1, TranslationActivity.class);
@@ -144,15 +131,17 @@ public class MainFragment2 extends Fragment implements View.OnClickListener{
                 Intent intent5=new Intent(activity5, ThemeActivity.class);
                 startActivity(intent5);
                 break;
-            case R.id.btn3:
-                Activity activity6=getActivity();
-                Intent intent6=new Intent(activity6, PoemcourseActivity.class);
-                startActivity(intent6);
-                break;
             case R.id.jumpToToday:
                 Activity activity7=getActivity();
                 Intent intent7=new Intent(activity7, TodayreadActivity.class);
                 startActivity(intent7);
+                break;
+            case R.id.search_shi_btn:
+                String content=editText.getText().toString();
+                Intent intent=new Intent(getActivity(), PoemContentActivity.class);
+                Toast.makeText(getActivity(),content,Toast.LENGTH_LONG).show();
+                intent.putExtra("title",content);
+                startActivity(intent);
                 break;
         }
     }

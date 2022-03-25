@@ -96,9 +96,6 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         switch (view.getId()){
             case R.id.back_btn2:
                 this.finish();
-                Intent intent=new Intent(this,TranslationActivity.class);
-                startActivity(intent);
-
         }
     }
 }

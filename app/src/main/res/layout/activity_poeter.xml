@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_background_color"
+    android:background="@color/shizhai_background_color"
     android:orientation="vertical">
     <ImageButton
         android:id="@+id/poeter_back"
@@ -14,19 +14,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/shape1"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="5dp"
         android:orientation="horizontal"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp">
-        <ImageView
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp">
+        <ImageButton
+            android:id="@+id/search_poeter_btn"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:background="@drawable/search"></ImageView>
+            android:background="@drawable/search"></ImageButton>
         <EditText
             android:id="@+id/poeter_name"
             android:layout_width="0dp"
-            android:layout_weight="8"
+            android:layout_weight="9"
             android:layout_height="wrap_content"
             android:background="@drawable/shape1"
             android:hint="请输入诗人名称"
@@ -58,11 +59,11 @@
          android:layout_alignLeft="@id/poeter_img"></TextView>
   </RelativeLayout>
     <LinearLayout
-        android:layout_marginTop="20dp"
+       android:layout_marginLeft="125dp"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="150dp">
+        android:orientation="horizontal">
        <Button
            android:id="@+id/p1"
            android:layout_width="wrap_content"
@@ -93,11 +94,11 @@
             android:text="李清照"></Button>
     </LinearLayout>
     <LinearLayout
+        android:layout_marginLeft="125dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="25dp"
-        android:layout_marginLeft="150dp">
+        android:layout_marginTop="25dp">
         <Button
             android:id="@+id/p5"
             android:layout_width="wrap_content"

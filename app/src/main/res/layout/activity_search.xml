@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/main_background_color"
+    android:background="@color/shizhai_background_color"
     >
     <ImageButton
         android:id="@+id/back_btn2"
@@ -15,8 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="10dp"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp"
        >
     <LinearLayout
         android:id="@+id/s_editor"
