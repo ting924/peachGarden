@@ -4,128 +4,172 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center"
+
     android:orientation="vertical"
+    app:layout_srlBackgroundColor="@color/white"
     tools:context="com.giftedcat.picture.lib.selector.MultiImageSelectorActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@drawable/login1" />
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@drawable/login2" />
+        android:layout_height="100dp"
+        android:src="@drawable/login2"
+        android:layout_marginTop="20dp"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_horizontal">
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+       >
 
-        <TextView
+        <ImageView
             android:id="@+id/tv_username"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="-15dp"
-            android:background="@drawable/login3" />
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/user" />
 
         <EditText
             android:id="@+id/et_username"
             android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:hint="用户名"
-            android:singleLine="true"
-            />
-        <LinearLayout
-            android:layout_width="80dp"
             android:layout_height="40dp"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp"
-            android:background="@color/white">
+            android:hint="用户名"
+            android:background="@null"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="200dp"
+        android:layout_height="2dp"
+        android:layout_gravity="center"
+        android:background="@color/kuangkuang"
+        />
 
-            <TextView
-                android:id="@+id/newUser"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:text="注册用户"
-                android:textAlignment="center" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        >
 
-            <TextView
-                android:layout_width="60dp"
-                android:layout_height="1dp"
-                android:layout_marginLeft="8dp"
-                android:background="#5C6A68" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:id="@+id/passkuang"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ts_password"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/password" />
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="160dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:hint="密码"
+                    android:inputType="textPassword" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="200dp"
+                android:layout_height="2dp"
+                android:background="@color/kuangkuang" />
         </LinearLayout>
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal">
-
-        <TextView
-            android:id="@+id/ts_password"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="-15dp"
-            android:background="@drawable/login4" />
-
-        <EditText
-            android:id="@+id/et_password"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:hint="密码"
-            android:inputType="textPassword"
-            />
-
         <LinearLayout
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp"
-            android:background="@color/white">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/passkuang"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/forgetPassword"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
                 android:text="忘记密码"
+                android:textSize="11dp"
                 android:textAlignment="center" />
 
-            <TextView
-                android:layout_width="60dp"
-                android:layout_height="1dp"
-                android:layout_marginLeft="8dp"
-                android:background="#5C6A68" />
+            <View
+                android:layout_width="50dp"
+                android:layout_height="2dp"
+                android:background="@color/kuangkuang" />
         </LinearLayout>
-    </LinearLayout>
+
+
+
+    </RelativeLayout>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_horizontal">
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:id="@+id/buttongroup"
+      >
 
         <Button
             android:id="@+id/bt_log"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="35dp"
             android:text="登录"
             android:textColor="@color/back_hui"
             android:layout_marginRight="20dp"
-            android:background="#D5A661"/>
+            android:background="#B99D76"/>
 
         <Button
             android:id="@+id/bt_bos"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="35dp"
             android:textColor="@color/back_hui"
-            android:background="#D5A661"
+            android:background="#B99D76"
             android:text="注册"/>
 
     </LinearLayout>
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:background="@color/white">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/forgetPassword"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="20dp"-->
+<!--            android:text="忘记密码"-->
+<!--            android:textAlignment="center" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="60dp"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:layout_marginLeft="8dp"-->
+<!--            android:background="#5C6A68" />-->
+<!--    </LinearLayout>-->
 
 </LinearLayout>
 
