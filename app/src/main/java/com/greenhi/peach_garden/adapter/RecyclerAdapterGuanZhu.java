@@ -1,6 +1,7 @@
 package com.greenhi.peach_garden.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SimpleItemAnimator;
 
 import com.greenhi.peach_garden.R;
+import com.greenhi.peach_garden.activity.CommentActivity;
 import com.greenhi.peach_garden.item.ItemDataSZ;
 import com.greenhi.peach_garden.item.ItemDynamic;
 import com.greenhi.peach_garden.utils.JsonParse;
@@ -111,7 +113,14 @@ public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapter
         holder.username.setText(data.getUserName());
         holder.head.setImageResource(R.drawable.default_circle_head);
 
-        holder.btnPinlun.setTag(data.getUid());
+        holder.btnPinlun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, CommentActivity.class);
+                intent.putExtra("dynamicId",data.getId());
+                context.startActivity(intent);
+            }
+        });
 
         holder.btLike.setOnCheckStateChangeListener(new ShineButton.OnCheckedChangeListener() {
             @Override

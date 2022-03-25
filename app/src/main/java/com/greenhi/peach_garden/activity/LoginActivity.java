@@ -3,26 +3,18 @@ package com.greenhi.peach_garden.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-
 import com.greenhi.peach_garden.R;
-import com.greenhi.peach_garden.activity.poetry_hall.PoemContentActivity;
 import com.greenhi.peach_garden.utils.UserMessage;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 
@@ -35,7 +27,6 @@ import okhttp3.Response;
 public class LoginActivity extends Activity {
     private EditText et_username;
     private EditText et_password;
-    private TextView newUser;
     private TextView forgetPassword;
     private Button bt_log;
     private Button bt_bos;
@@ -49,17 +40,9 @@ public class LoginActivity extends Activity {
         //通过资源标识获得控件实例
         et_username = (EditText) findViewById(R.id.et_username);
         et_password = (EditText) findViewById(R.id.et_password);
-        newUser = (TextView) findViewById(R.id.newUser);
         forgetPassword = (TextView) findViewById(R.id.forgetPassword);
         bt_log = (Button) findViewById(R.id.bt_log);
         bt_bos = (Button) findViewById(R.id.bt_bos);
-        newUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, RegistActivity.class);
-                startActivity(intent);
-            }
-        });
         forgetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

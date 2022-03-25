@@ -2,6 +2,7 @@ package com.greenhi.peach_garden.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.greenhi.peach_garden.item.ItemComment;
 import com.greenhi.peach_garden.item.ItemDynamic;
 import com.greenhi.peach_garden.item.ItemAllDynamic;
 import com.greenhi.peach_garden.item.ItemUser;
@@ -17,6 +18,14 @@ public class JsonParse {
         Type ListType=new TypeToken<Root<List<ItemDynamic>>>(){}.getType();
         Root<List<ItemDynamic>> dynamics=gson.fromJson(json,ListType);
         List<ItemDynamic> result = dynamics.getResult();
+        return result;
+    }
+
+    public static List<ItemComment> GetCommment(String json){
+        Gson gson=new Gson();
+        Type ListType=new TypeToken<Root<List<ItemComment>>>(){}.getType();
+        Root<List<ItemComment>> dynamics=gson.fromJson(json,ListType);
+        List<ItemComment> result = dynamics.getResult();
         return result;
     }
 
