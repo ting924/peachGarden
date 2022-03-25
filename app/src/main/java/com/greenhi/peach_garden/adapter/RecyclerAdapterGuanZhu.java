@@ -1,6 +1,7 @@
 package com.greenhi.peach_garden.adapter;
 
 import android.content.Context;
+import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,6 +43,7 @@ public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapter
     public RecyclerAdapterGuanZhu.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.shizhai_guanzhu, parent, false);
         RecyclerAdapterGuanZhu.ViewHolder viewHolder = new RecyclerAdapterGuanZhu.ViewHolder(itemView);
+        viewHolder.setIsRecyclable(true);
         return viewHolder;
     }
 
@@ -60,9 +62,8 @@ public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapter
             }
             System.out.println("urls-------------------urls: " + urls.toString());
             holder.nineGrid.setImagesData(urls);
-            holder.nineGrid.setVisibility(View.GONE);
-            holder.nineGrid.setVisibility(View.VISIBLE);
         }
+        System.out.println("RecyclerAdapterGuanZhu onBindViewHolder");
 
         holder.comments.setText("" + data.getCommentNumber());
         holder.likes.setText("" + data.getLoveNumber());
@@ -121,6 +122,7 @@ public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapter
         private NineGridImageView nineGrid;
 
         private NineGridImageViewAdapter<String> mAdapter = new NineGridImageViewAdapter<String>() {
+
             @Override
             protected void onDisplayImage(Context context, ImageView imageView, String url) {
              Picasso.with(context).load(url).placeholder(R.drawable.placeholder).into(imageView);
@@ -129,19 +131,6 @@ public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapter
             @Override
             protected ImageView generateImageView(Context context) {
              return super.generateImageView(context);
-            }
-
-            @Override
-            protected void onItemImageClick(Context context, ImageView imageView, int index, List<String> list) {
-             super.onItemImageClick(context, imageView, index, list);
-             //Toast.makeText(context, "image position is " + index, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            protected boolean onItemImageLongClick(Context context, ImageView imageView, int index, List<String> list) {
-             super.onItemImageLongClick(context, imageView, index, list);
-             //Toast.makeText(context, "image long click position is " + index, Toast.LENGTH_SHORT).show();
-             return true;
             }
         };
 
@@ -165,6 +154,14 @@ public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapter
 
             this.nineGrid = itemView.findViewById(R.id.sz_gz_ninegrid);
             nineGrid.setAdapter(mAdapter);
+//            nineGrid.setFocusable(false);
+            nineGrid.setVisibility(View.GONE);
+//            nineGrid.setVisibility(View.VISIBLE);
+//            if (Build.VERSION.SDK_INT == Build.VERSION_CODES.LOLLIPOP) {
+//                nineGrid.setVisibility(View.INVISIBLE);
+//            } else {
+//                nineGrid.setVisibility(View.GONE);
+//            }
         }
     }
 }

@@ -48,6 +48,7 @@ public class RecyclerAdapterJingXuan extends RecyclerView.Adapter<RecyclerAdapte
     public RecyclerAdapterJingXuan.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.shizhai_jingxuan, parent, false);
         RecyclerAdapterJingXuan.ViewHolder viewHolder = new RecyclerAdapterJingXuan.ViewHolder(itemView);
+        viewHolder.setIsRecyclable(true);
         return viewHolder;
     }
 

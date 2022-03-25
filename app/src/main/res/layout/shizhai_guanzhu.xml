@@ -17,8 +17,7 @@
             android:id="@+id/iv_sz_gz_head"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:layout_centerVertical="true"
-            android:src="@drawable/default_circle_head"/>
+            android:layout_centerVertical="true"/>
 
         <TextView
             android:id="@+id/tv_sz_gz_name"
