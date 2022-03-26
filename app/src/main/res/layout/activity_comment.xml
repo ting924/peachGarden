@@ -7,26 +7,52 @@
     tools:context=".activity.CommentActivity"
     android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_comment"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"/>
-
-<!--    <EditText-->
-<!--        android:id="@+id/edittext"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="80dp"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:background="@color/cardview_dark_background"-->
-<!--        android:gravity="start|top"-->
-<!--        android:hint="说点什么吧..."></EditText>-->
-
-    <Button
-        android:id="@+id/comment_pinlun"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="评论"/>
+        android:layout_margin="10dp"
+        android:background="@drawable/editbackground"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/comment_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="评论内容"
+            android:textSize="20dp"
+            android:textStyle="bold">
+        </TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/comment_list"
+            android:background="#9cb4d9" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_comment"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"/>
+
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/comment_pinlun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/buttonstyle"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:text="评论"/>
+
+
+
 </LinearLayout>

@@ -24,5 +24,7 @@
     <color name="guanzhu_border">#D12324</color>
     <color name="shizhai_background_color">#BCA07C</color>
     <color name="kuangkuang">#e8e6df</color>
+    <color name="dandanlan">#a8bdde</color>
+    <color name="danlan">#6b8fc6</color>
 
 </resources>

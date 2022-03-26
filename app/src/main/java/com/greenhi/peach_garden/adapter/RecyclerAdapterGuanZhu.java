@@ -137,14 +137,14 @@ public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapter
                             }else {
                                 gzList.get(position).setLoveNumber(gzList.get(position).getLoveNumber()-1);
                             }
-                            notifyItemChanged(position);
+                            notifyItemChanged(position,0 );
                         }catch (Exception e){
                             e.printStackTrace();
                         }
                     }
                     @Override
                     public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                        Log.d("点赞+1","失败");
+                        Log.d("neterror","点赞+1失败");
                     }
                 });
             }

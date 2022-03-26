@@ -1,5 +1,7 @@
 package com.greenhi.peach_garden.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.greenhi.peach_garden.R;
+import com.greenhi.peach_garden.activity.CommentActivity;
 import com.greenhi.peach_garden.item.ItemDataSZ;
 import com.greenhi.peach_garden.item.ItemDynamic;
 import com.loopj.android.http.AsyncHttpClient;
@@ -25,8 +28,10 @@ import cz.msebera.android.httpclient.Header;
 public class RecyclerAdapterSZ extends RecyclerView.Adapter<RecyclerAdapterSZ.ViewHolder> {
 
     private List<ItemDynamic> szList;
+    private Context context;
 
-    public RecyclerAdapterSZ(List<ItemDynamic> szList) {
+    public RecyclerAdapterSZ(Context context,List<ItemDynamic> szList) {
+        this.context=context;
         this.szList = szList;
     }
 
@@ -49,6 +54,14 @@ public class RecyclerAdapterSZ extends RecyclerView.Adapter<RecyclerAdapterSZ.Vi
         }
         holder.username.setText(data.getUserName());
         holder.head.setImageResource(R.drawable.default_circle_head);
+        holder.pinlun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, CommentActivity.class);
+                intent.putExtra("dynamicId",data.getId());
+                context.startActivity(intent);
+            }
+        });
         holder.btLike.setOnCheckStateChangeListener(new ShineButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(View view, boolean checked) {

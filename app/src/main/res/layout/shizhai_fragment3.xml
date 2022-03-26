@@ -26,9 +26,9 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:text="发布内容"
-                android:textSize="20dp"
                 android:textColor="@color/black"
-                android:textStyle="bold"/>
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"

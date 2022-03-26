@@ -39,4 +39,9 @@
         <!-- 点击空白部分activity不消失 -->
         <item name="android:windowCloseOnTouchOutside">true</item>
     </style>
+
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/dandanlan</item>
+        <item name="colorControlActivated">@color/danlan</item>
+    </style>
 </resources>

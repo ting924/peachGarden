@@ -37,7 +37,6 @@ public class WodeFragment5 extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerAdapterSZ recyclerAdapter;
 
-    private List<ItemDataSZ> szList;
     private List<ItemDynamic> dynamics;
 
     public static WodeFragment5 newInstance(){
@@ -59,21 +58,8 @@ public class WodeFragment5 extends Fragment {
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.wode_fragment5, container, false);
         }
-        initData();
         initView();
         return rootView;
-    }
-
-    private void initData() {
-        szList = new ArrayList<>();
-        szList.add(new ItemDataSZ("用户名","今天 16:35","不采而佩亦曾伤,春风座客君子堂.\n" +
-                "笔墨千古香飘尽,一片芳心锁幽窗.",R.drawable.default_circle_head,2,300,66));
-        szList.add(new ItemDataSZ("用户名","今天 16:35","生活得最有意义的人，并不就是年岁活" +
-                "得最大的人，而是对生活最有感受的人。",R.drawable.default_circle_head,2,222,44));
-        szList.add(new ItemDataSZ("用户名","今天 16:35","不采而佩亦曾伤,春风座客君子堂.\n" +
-                "笔墨千古香飘尽,一片芳心锁幽窗.",R.drawable.default_circle_head,2,300,66));
-        szList.add(new ItemDataSZ("用户名","今天 16:35","不采而佩亦曾伤,春风座客君子堂.\n" +
-                "笔墨千古香飘尽,一片芳心锁幽窗.",R.drawable.default_circle_head,2,300,66));
     }
 
     private void initView() {
@@ -94,7 +80,7 @@ public class WodeFragment5 extends Fragment {
                 try{
                     String json=new String(bytes,"utf-8");
                     dynamics = JsonParse.Getdynamic(json);
-                    recyclerAdapter = new RecyclerAdapterSZ(dynamics);
+                    recyclerAdapter = new RecyclerAdapterSZ(mContext,dynamics);
                     recyclerView.setAdapter(recyclerAdapter);
                 }catch (Exception e){
                     e.printStackTrace();

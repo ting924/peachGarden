@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:src="@drawable/login2"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         />
 
     <LinearLayout

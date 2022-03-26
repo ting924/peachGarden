@@ -35,8 +35,8 @@ public class RecyclerAdapterComment extends RecyclerView.Adapter<RecyclerAdapter
     public void onBindViewHolder(ViewHolder holder, int position) {
         ItemComment data = commentList.get(position);
 //        holder.username.setText(data.getUid());
+
         holder.text.setText(data.getCommentContent());
-        holder.profile.setImageResource(R.drawable.default_circle_head);
     }
 
     @Override
@@ -54,8 +54,16 @@ public class RecyclerAdapterComment extends RecyclerView.Adapter<RecyclerAdapter
             super(itemView);
             username = itemView.findViewById(R.id.comment_name);
             text = itemView.findViewById(R.id.comment_content);
-            profile=itemView.findViewById(R.id.comment_head);
 
         }
     }
+
+    public void add(int position, ItemComment data) {
+        commentList.add(position, data);
+        notifyItemInserted(position);
+        notifyItemRangeChanged(position, 1);
+    }
+
+
+
 }

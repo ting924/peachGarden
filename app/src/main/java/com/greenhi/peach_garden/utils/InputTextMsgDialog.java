@@ -77,6 +77,7 @@ public class InputTextMsgDialog extends AppCompatDialog {
     private void init() {
         setContentView(R.layout.dialog_input_text_msg);
         messageTextView = (EditText) findViewById(R.id.et_input_message);
+        messageTextView.requestFocus();
         tvNumber = (TextView) findViewById(R.id.tv_test);
         final LinearLayout rldlgview = (LinearLayout) findViewById(R.id.rl_inputdlg_view);
         messageTextView.addTextChangedListener(new TextWatcher() {

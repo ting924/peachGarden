@@ -1,6 +1,7 @@
 package com.greenhi.peach_garden.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.greenhi.peach_garden.R;
+import com.greenhi.peach_garden.activity.CommentActivity;
 import com.greenhi.peach_garden.item.ItemDataSZ;
 import com.greenhi.peach_garden.item.RecordsDTO;
 import com.jaeger.ninegridimageview.NineGridImageView;
@@ -30,8 +32,10 @@ import cz.msebera.android.httpclient.Header;
 public class RecyclerAdapterJingXuan extends RecyclerView.Adapter<RecyclerAdapterJingXuan.ViewHolder> {
     private List<RecordsDTO> jxList;
     private int id;  //当前用户id
+    private Context context;
 
-    public RecyclerAdapterJingXuan(List<RecordsDTO> jxList, int id) {
+    public RecyclerAdapterJingXuan(Context context,List<RecordsDTO> jxList, int id) {
+        this.context = context;
         this.jxList = jxList;
         this.id = id;
     }
@@ -79,6 +83,14 @@ public class RecyclerAdapterJingXuan extends RecyclerView.Adapter<RecyclerAdapte
             holder.time.setText(data.getCreateTime().substring(0, 10) + " " + data.getCreateTime().substring(11, 19));
         }
         holder.head.setImageResource(R.drawable.default_circle_head);
+        holder.btnPinlun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, CommentActivity.class);
+                intent.putExtra("dynamicId",data.getId());
+                context.startActivity(intent);
+            }
+        });
         holder.btLike.setOnCheckStateChangeListener(new ShineButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(View view, boolean checked) {

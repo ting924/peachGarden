@@ -92,7 +92,7 @@ public class ShizhaiFragment2 extends Fragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(mContext, 2);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setItemAnimator(animator);
-//        ((SimpleItemAnimator) recyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
+        ((SimpleItemAnimator) recyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
 
         getAllDynamics(true);
         refreshLayout = rootView.findViewById(R.id.srl);
@@ -123,7 +123,7 @@ public class ShizhaiFragment2 extends Fragment {
 
                     if (jxList != null && jxList.size() > 0) {
                         if (page == 1) {
-                            recyclerAdapter = new RecyclerAdapterJingXuan(jxList, id);
+                            recyclerAdapter = new RecyclerAdapterJingXuan(mContext,jxList, id);
                             recyclerView.setAdapter(recyclerAdapter);
                         } else {
                             recyclerAdapter.addAllData(jxList);

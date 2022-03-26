@@ -3,37 +3,47 @@
 android:layout_width="match_parent"
 android:layout_height="wrap_content"
 android:orientation="vertical"
-android:layout_margin="20dp">
+android:layout_margin="10dp">
     <RelativeLayout
     android:id="@+id/comment"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
     android:orientation="horizontal">
-
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/comment_head"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_centerVertical="true"
-            android:src="@drawable/default_circle_head" />
+        android:id="@+id/comment_head"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/default_circle_head" />
 
-        <TextView
-            android:id="@+id/comment_name"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="15dp"
             android:layout_toRightOf="@+id/comment_head"
-            android:text="用户名"
-            android:textColor="#3d444d"
-            android:textSize="14sp" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/comment_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:text="用户名"
+                android:textColor="#3d444d"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/comment_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="lllllllllllllllllllllllllllllll"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+
     </RelativeLayout>
-    <TextView
-        android:id="@+id/comment_content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="lllllllllllllllllllllllllllllll"
-        android:layout_marginTop="5dp"/>
 </LinearLayout>

@@ -92,7 +92,7 @@ public class ShizhaiFragment1 extends Fragment implements RecyclerAdapterGuanZhu
         GridLayoutManager gridLayoutManager = new GridLayoutManager(mContext,2);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setItemAnimator(animator);
-//        ((SimpleItemAnimator)recyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
+        ((SimpleItemAnimator)recyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
         getFocusDynamics();
     }
 
