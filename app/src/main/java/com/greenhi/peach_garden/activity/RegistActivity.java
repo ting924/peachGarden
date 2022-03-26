@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.greenhi.peach_garden.R;
 import com.greenhi.peach_garden.activity.poetry_hall.PoemContentActivity;
+import com.greenhi.peach_garden.utils.ActivityCollectorUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,15 +38,15 @@ public class RegistActivity extends Activity {
 
     private Button bt_log;
     private Button bt_bos;
-    private String URL="http://47.108.176.163:7777/user/add";
-    private String URL_get="http://47.108.176.163:7777/user/selectOneByUid?uid=";
+    private String URL = "http://47.108.176.163:7777/user/add";
+    private String URL_get = "http://47.108.176.163:7777/user/selectOneByUid?uid=";
 
-    private void postAsynHttp(String user,String password) throws JSONException {
+    private void postAsynHttp(String user, String password) throws JSONException {
         OkHttpClient mOkHttpClient = new OkHttpClient();
-        String formBody = "[ uid="+user+",password="+password+"]";
+        String formBody = "[ uid=" + user + ",password=" + password + "]";
         System.out.println(formBody);
-        JSONObject EventTraceInput =new JSONObject();
-        EventTraceInput.put("uid",user);
+        JSONObject EventTraceInput = new JSONObject();
+        EventTraceInput.put("uid", user);
         EventTraceInput.put("password", password);
         MediaType mediaType = MediaType.parse("application/json; charset=utf-8");
         final okhttp3.Request request = new okhttp3.Request.Builder()
@@ -59,6 +60,7 @@ public class RegistActivity extends Activity {
             @Override
             public void onFailure(Call call, IOException e) {
             }
+
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String str = response.body().string();
@@ -72,9 +74,11 @@ public class RegistActivity extends Activity {
             }
         });
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityCollectorUtil.addActivity(this);
         //利用布局资源文件设置用户界面
         setContentView(R.layout.activity_regist);
 
@@ -103,7 +107,7 @@ public class RegistActivity extends Activity {
 
                     OkHttpClient okHttpClient = new OkHttpClient();
                     final Request request = new Request.Builder()
-                            .url(URL_get+strUsername)
+                            .url(URL_get + strUsername)
                             .get()//默认就是GET请求，可以不写
                             .build();
                     Call call = okHttpClient.newCall(request);
@@ -138,7 +142,7 @@ public class RegistActivity extends Activity {
                                             Toast.makeText(RegistActivity.this, "注册成功！", Toast.LENGTH_SHORT).show();
                                         }
                                     }
-                                }else {
+                                } else {
                                     Looper.prepare();
                                     Toast.makeText(RegistActivity.this, "用户已存在！", Toast.LENGTH_SHORT).show();
                                     Looper.loop();
@@ -159,6 +163,12 @@ public class RegistActivity extends Activity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollectorUtil.removeActivity(this);
     }
 }
 

@@ -17,6 +17,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.greenhi.peach_garden.retrofit.PermissionListener;
+import com.greenhi.peach_garden.utils.ActivityCollectorUtil;
 
 import java.net.HttpURLConnection;
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityCollectorUtil.addActivity(this);
         activity = this;
     }
 
@@ -155,5 +157,11 @@ public class BaseActivity extends AppCompatActivity {
                 Log.e(TAG, "onFailure --> " + t.toString());
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollectorUtil.removeActivity(this);
     }
 }

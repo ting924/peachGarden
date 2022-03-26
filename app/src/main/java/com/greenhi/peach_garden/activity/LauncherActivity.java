@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.greenhi.peach_garden.R;
+import com.greenhi.peach_garden.utils.ActivityCollectorUtil;
 import com.greenhi.peach_garden.utils.ShareUtils;
 
 public class LauncherActivity extends Activity {
@@ -30,9 +31,14 @@ public class LauncherActivity extends Activity {
                 case HANDLER_SPLASH:
                     //判断程序是否是第一次运行
                     if (isFirst()) {
+//                    if (true) {
                         startActivity(new Intent(LauncherActivity.this, IntroActivity.class));
                     } else {
-                        startActivity(new Intent(LauncherActivity.this, LoginActivity.class));
+                        if (haveLogin()) {
+                            startActivity(new Intent(LauncherActivity.this, MainActivity.class));
+                        } else {
+                            startActivity(new Intent(LauncherActivity.this, LoginActivity.class));
+                        }
                     }
                     finish();
                     break;
@@ -48,6 +54,7 @@ public class LauncherActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityCollectorUtil.addActivity(this);
         setContentView(R.layout.activity_launcher);
         initView();
 
@@ -56,7 +63,7 @@ public class LauncherActivity extends Activity {
     //初始化View
     private void initView() {
         //延时2000ms
-        handler.sendEmptyMessageDelayed(HANDLER_SPLASH, 1000);
+        handler.sendEmptyMessageDelayed(HANDLER_SPLASH, 2000);
     }
 
     //判断程序是否第一次运行
@@ -69,7 +76,16 @@ public class LauncherActivity extends Activity {
         } else {
             return false;
         }
+    }
 
+    //判断程序是否已登录
+    private boolean haveLogin() {
+        boolean haveLogin = ShareUtils.getBoolean(this, ShareUtils.HAVE_LOGIN, true);
+        if (haveLogin) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
@@ -82,4 +98,9 @@ public class LauncherActivity extends Activity {
         super.onPause();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollectorUtil.removeActivity(this);
+    }
 }

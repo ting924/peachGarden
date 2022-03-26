@@ -6,6 +6,9 @@ public class ShareUtils {
 
     public static final String NAME = "config";
 
+    //判断是否已登录
+    public static final String HAVE_LOGIN = "haveLogin";
+
     //键 值
     public static void putBoolean(Context mContext, String key, boolean value) {
         SharedPreferences sp = mContext.getSharedPreferences(NAME, Context.MODE_PRIVATE);

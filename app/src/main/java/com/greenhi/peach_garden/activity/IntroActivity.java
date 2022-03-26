@@ -10,42 +10,46 @@ import android.os.Bundle;
 import com.github.appintro.AppIntro;
 import com.github.appintro.AppIntroFragment;
 import com.greenhi.peach_garden.R;
+import com.greenhi.peach_garden.utils.ActivityCollectorUtil;
 
 public class IntroActivity extends AppIntro {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityCollectorUtil.addActivity(this);
         addSlide(AppIntroFragment.newInstance(
-                "桃花源","诗词查询",
-                R.drawable.yindao1,Color.WHITE,Color.BLACK,Color.BLACK)
+                "桃花源", "诗词查询",
+                R.drawable.yindao1, Color.WHITE, Color.BLACK, Color.BLACK)
         );
         showStatusBar(true);
         addSlide(AppIntroFragment.newInstance(
-                "桃花源","发表动态",
-                R.drawable.yindao2,Color.WHITE,Color.BLACK,Color.BLACK)
+                "桃花源", "发表动态",
+                R.drawable.yindao2, Color.WHITE, Color.BLACK, Color.BLACK)
         );
         showStatusBar(true);
         addSlide(AppIntroFragment.newInstance(
-                "桃花源","结交诗友",
-                R.drawable.yindao3,Color.WHITE,Color.BLACK,Color.BLACK)
+                "桃花源", "结交诗友",
+                R.drawable.yindao3, Color.WHITE, Color.BLACK, Color.BLACK)
         );
         showStatusBar(true);
         addSlide(AppIntroFragment.newInstance(
-                "桃花源","文创商品",
-                R.drawable.yindao4,Color.WHITE,Color.BLACK,Color.BLACK)
+                "桃花源", "文创商品",
+                R.drawable.yindao4, Color.WHITE, Color.BLACK, Color.BLACK)
         );
 //        showStatusBar(true);
 //        addSlide(AppIntroFragment.newInstance(
 //                "桃花源","畅玩游戏",
 //                R.drawable.yindao5,Color.WHITE,Color.BLACK,Color.BLACK)
 //        );
-        setIndicatorColor(getColor(R.color.app_color_red),getColor(R.color.black));
+        setIndicatorColor(getColor(R.color.app_color_red), getColor(R.color.black));
         setProgressIndicator();
+
         setSkipText("跳过");
+        setColorSkipButton(R.id.search_button);
         setDoneText("完成");
+        setColorDoneText(getColor(R.color.set_language_text_normal));
         showStatusBar(true);
     }
-
 
 
     @Override
@@ -66,4 +70,9 @@ public class IntroActivity extends AppIntro {
         finish();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollectorUtil.removeActivity(this);
+    }
 }

@@ -11,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.greenhi.peach_garden.R;
+import com.greenhi.peach_garden.utils.ActivityCollectorUtil;
+import com.greenhi.peach_garden.utils.ShareUtils;
 import com.greenhi.peach_garden.utils.UserMessage;
 
 import org.json.JSONException;
@@ -30,10 +32,12 @@ public class LoginActivity extends Activity {
     private TextView forgetPassword;
     private Button bt_log;
     private Button bt_bos;
-    private String URL="http://47.108.176.163:7777/user/selectOneByUid?uid=";
+    private String URL = "http://47.108.176.163:7777/user/selectOneByUid?uid=";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityCollectorUtil.addActivity(this);
         //利用布局资源文件设置用户界面
         setContentView(R.layout.activity_login);
 
@@ -46,19 +50,19 @@ public class LoginActivity extends Activity {
         forgetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(LoginActivity.this,"请联系管理员！",Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "请联系管理员！", Toast.LENGTH_SHORT).show();
             }
         });
         //给登录按钮注册监听器，实现监听器接口，编写事件
         bt_log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 //获取用户输入的数据
+                //获取用户输入的数据
                 String strUsername = et_username.getText().toString();
                 String strPassword = et_password.getText().toString();
                 OkHttpClient okHttpClient = new OkHttpClient();
                 final Request request = new Request.Builder()
-                        .url(URL+strUsername)
+                        .url(URL + strUsername)
                         .get()//默认就是GET请求，可以不写
                         .build();
                 Call call = okHttpClient.newCall(request);
@@ -71,31 +75,35 @@ public class LoginActivity extends Activity {
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
 
-                        String res=response.body().string();
-                       try {
-                           JSONObject jsonObject = new JSONObject(res);
-                           if (jsonObject.getString("code").equals("104")){
-                               Looper.prepare();
-                               Toast.makeText(LoginActivity.this,"用户名或密码错误！",Toast.LENGTH_SHORT).show();
-                               Looper.loop();
-                           }else{
-                               JSONObject jsonObject2=jsonObject.getJSONObject("data");
-                               String password=jsonObject2.getString("password");
-                               if(strUsername.equals(strUsername) && strPassword.equals(password)){
-                                   Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                   startActivity(intent);
-                                   int id=jsonObject2.getInt("id");
-                                   UserMessage.saveUserInfo(LoginActivity.this,id);
-                                   Looper.prepare();
-                                   Toast toast= Toast.makeText(LoginActivity.this,"登录成功！",Toast.LENGTH_SHORT);
-                                   toast.show();
-                                   Looper.loop();
-                               }else {
-                                   Looper.prepare();
-                                   Toast.makeText(LoginActivity.this,"用户名或密码错误！",Toast.LENGTH_SHORT).show();
-                                   Looper.loop();
-                               }
-                           }
+                        String res = response.body().string();
+                        try {
+                            JSONObject jsonObject = new JSONObject(res);
+                            if (jsonObject.getString("code").equals("104")) {
+                                Looper.prepare();
+                                Toast.makeText(LoginActivity.this, "用户名或密码错误！", Toast.LENGTH_SHORT).show();
+                                Looper.loop();
+                            } else {
+                                JSONObject jsonObject2 = jsonObject.getJSONObject("data");
+                                String password = jsonObject2.getString("password");
+                                if (strUsername.equals(strUsername) && strPassword.equals(password)) {
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    startActivity(intent);
+
+                                    ActivityCollectorUtil.finishAllActivity();
+                                    ShareUtils.putBoolean(LoginActivity.this, ShareUtils.HAVE_LOGIN, true);
+
+                                    int id = jsonObject2.getInt("id");
+                                    UserMessage.saveUserInfo(LoginActivity.this, id);
+                                    Looper.prepare();
+                                    Toast toast = Toast.makeText(LoginActivity.this, "登录成功！", Toast.LENGTH_SHORT);
+                                    toast.show();
+                                    Looper.loop();
+                                } else {
+                                    Looper.prepare();
+                                    Toast.makeText(LoginActivity.this, "用户名或密码错误！", Toast.LENGTH_SHORT).show();
+                                    Looper.loop();
+                                }
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -110,8 +118,15 @@ public class LoginActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegistActivity.class);
                 startActivity(intent);
+                ActivityCollectorUtil.finishAllActivity();
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollectorUtil.removeActivity(this);
     }
 }
 

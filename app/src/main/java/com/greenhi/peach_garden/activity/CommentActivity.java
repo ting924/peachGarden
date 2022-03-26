@@ -16,6 +16,7 @@ import com.greenhi.peach_garden.R;
 import com.greenhi.peach_garden.adapter.RecyclerAdapterComment;
 import com.greenhi.peach_garden.item.ItemComment;
 import com.greenhi.peach_garden.item.ItemDataSC;
+import com.greenhi.peach_garden.utils.ActivityCollectorUtil;
 import com.greenhi.peach_garden.utils.InputTextMsgDialog;
 import com.greenhi.peach_garden.utils.JsonParse;
 import com.greenhi.peach_garden.utils.UserMessage;
@@ -42,11 +43,11 @@ public class CommentActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RecyclerAdapterComment recyclerAdapter;
-    private  InputTextMsgDialog inputTextMsgDialog;
+    private InputTextMsgDialog inputTextMsgDialog;
 
     private List<ItemComment> commentList;
 
-    private String URL="http://47.108.176.163:7777/comment/add";
+    private String URL = "http://47.108.176.163:7777/comment/add";
     private int uid;
     private int dynamicId;
     private int position;
@@ -54,10 +55,11 @@ public class CommentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityCollectorUtil.addActivity(this);
         setContentView(R.layout.activity_comment);
-        uid= UserMessage.getUserInfo(this);
-        Intent intent =getIntent();
-        dynamicId = intent.getIntExtra("dynamicId",0);
+        uid = UserMessage.getUserInfo(this);
+        Intent intent = getIntent();
+        dynamicId = intent.getIntExtra("dynamicId", 0);
         inputTextMsgDialog = new InputTextMsgDialog(this, R.style.dialog_center);
         inputTextMsgDialog.setmOnTextSendListener(new InputTextMsgDialog.OnTextSendListener() {
             @Override
@@ -65,7 +67,7 @@ public class CommentActivity extends AppCompatActivity {
                 //点击发送按钮后，回调此方法，msg为输入的值
                 inputTextMsgDialog.dismiss();
                 try {
-                    postAsynHttp(uid,dynamicId,msg);
+                    postAsynHttp(uid, dynamicId, msg);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -78,42 +80,41 @@ public class CommentActivity extends AppCompatActivity {
                 inputTextMsgDialog.show();
             }
         });
-        recyclerView =(RecyclerView) findViewById(R.id.recycler_comment);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_comment);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         getComment(dynamicId);
     }
 
 
-
-
-    private void getComment(int dynamicId){
-        String url = "http://47.108.176.163:7777/comment/selectByDid?did="+dynamicId;
-        AsyncHttpClient client=new AsyncHttpClient();
+    private void getComment(int dynamicId) {
+        String url = "http://47.108.176.163:7777/comment/selectByDid?did=" + dynamicId;
+        AsyncHttpClient client = new AsyncHttpClient();
         client.get(url, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] bytes) {
-                try{
-                    String json=new String(bytes,"utf-8");
+                try {
+                    String json = new String(bytes, "utf-8");
                     commentList = JsonParse.GetCommment(json);
-                    recyclerAdapter=new RecyclerAdapterComment(commentList);
+                    recyclerAdapter = new RecyclerAdapterComment(commentList);
                     recyclerView.setAdapter(recyclerAdapter);
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
+
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Log.d("获取评论失败","失败");
+                Log.d("获取评论失败", "失败");
             }
         });
 
     }
 
-    private void postAsynHttp(Integer uid,Integer dynamicId,String commentContent) throws JSONException {
+    private void postAsynHttp(Integer uid, Integer dynamicId, String commentContent) throws JSONException {
         OkHttpClient mOkHttpClient = new OkHttpClient();
-        JSONObject EventTraceInput =new JSONObject();
-        EventTraceInput.put("uid",uid);
+        JSONObject EventTraceInput = new JSONObject();
+        EventTraceInput.put("uid", uid);
         EventTraceInput.put("dynamicId", dynamicId);
         EventTraceInput.put("commentContent", commentContent);
         MediaType mediaType = MediaType.parse("application/json; charset=utf-8");
@@ -127,17 +128,18 @@ public class CommentActivity extends AppCompatActivity {
             public void onFailure(Call call, IOException e) {
                 Toast.makeText(getApplicationContext(), "请求失败", Toast.LENGTH_SHORT).show();
             }
+
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String str = response.body().string();
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        position=recyclerAdapter.getItemCount();
-                        Log.d("position",position+"");
+                        position = recyclerAdapter.getItemCount();
+                        Log.d("position", position + "");
                         Toast.makeText(getApplicationContext(), "请求成功", Toast.LENGTH_SHORT).show();
                         addCommentNumber();
-                        recyclerAdapter.add(position,new ItemComment(0,uid,dynamicId,commentContent,null,null));
+                        recyclerAdapter.add(position, new ItemComment(0, uid, dynamicId, commentContent, null, null));
                         recyclerView.scrollToPosition(recyclerAdapter.getItemCount());
                     }
                 });
@@ -145,23 +147,30 @@ public class CommentActivity extends AppCompatActivity {
         });
     }
 
-    private void addCommentNumber(){
-        String url = "http://47.108.176.163:7777/dynamic/addCommById?id="+dynamicId+"&add=true";
-        AsyncHttpClient client=new AsyncHttpClient();
+    private void addCommentNumber() {
+        String url = "http://47.108.176.163:7777/dynamic/addCommById?id=" + dynamicId + "&add=true";
+        AsyncHttpClient client = new AsyncHttpClient();
         client.post(url, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] bytes) {
-                try{
-                    Log.d("ccomment","评论数+1成功");
-                }catch (Exception e){
+                try {
+                    Log.d("ccomment", "评论数+1成功");
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
+
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Log.d("ccomment","评论数+1失败");
+                Log.d("ccomment", "评论数+1失败");
             }
         });
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollectorUtil.removeActivity(this);
     }
 }

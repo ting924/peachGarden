@@ -20,6 +20,7 @@ import com.greenhi.peach_garden.fragment.SetFragment4;
 import com.greenhi.peach_garden.fragment.SetFragment5;
 import com.greenhi.peach_garden.fragment.SetFragment6;
 import com.greenhi.peach_garden.fragment.SetFragment7;
+import com.greenhi.peach_garden.utils.ActivityCollectorUtil;
 import com.greenhi.peach_garden.utils.ScreenUtils;
 
 import java.util.ArrayList;
@@ -45,6 +46,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityCollectorUtil.addActivity(this);
         initView();
         initData();
         initListener();
@@ -79,7 +81,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
     }
 
-    private void initListener(){
+    private void initListener() {
         mTab1.setOnClickListener(this);
         mTab2.setOnClickListener(this);
         mTab3.setOnClickListener(this);
@@ -191,4 +193,9 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         fragmentTransaction.commit();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollectorUtil.removeActivity(this);
+    }
 }
