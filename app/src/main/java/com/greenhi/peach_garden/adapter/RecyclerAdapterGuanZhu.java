@@ -217,8 +217,6 @@ public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapter
         void onMyItemClick(RecyclerView parent, View view, int position, ItemDynamic data);
     }
 
-
-
     // 删除数据
     public void remove(int position){
         gzList.remove(position);

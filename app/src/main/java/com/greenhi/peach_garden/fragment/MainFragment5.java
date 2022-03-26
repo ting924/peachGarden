@@ -10,16 +10,25 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.transition.AutoTransition;
+import androidx.transition.Fade;
+import androidx.transition.Scene;
+import androidx.transition.Transition;
+import androidx.transition.TransitionInflater;
+import androidx.transition.TransitionManager;
+import androidx.transition.TransitionSet;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.greenhi.peach_garden.R;
 import com.greenhi.peach_garden.activity.SettingActivity;
 import com.greenhi.peach_garden.adapter.MyFragmentPagerAdapter;
+import com.greenhi.peach_garden.scroll_view.MyScrollView;
 
 import java.util.ArrayList;
 
@@ -31,9 +40,20 @@ public class MainFragment5 extends Fragment {
     private ViewPager2 viewPager;
     private ArrayList<Fragment> fragments;
 
-    private TextView tvSc,tvFs,tvGz,tvXj,tvSz,tvCurrent;
-    private LinearLayout llSc,llFs,llGz,llXj,llSz;
+    private TextView tvSc, tvFs, tvGz, tvXj, tvSz, tvCurrent;
+    private LinearLayout llSc, llFs, llGz, llXj, llSz;
     private ImageView ivSetting;
+
+    private MyScrollView scrollView;
+    private MyScrollView.OnMyScrollListener listener;
+    private int oldY = 0;
+
+    private ViewGroup sceneRoot;
+    private ViewGroup sceneRoot2;
+    private Scene preScene;
+    private Scene endScene;
+    private Scene preScene2;
+    private Scene endScene2;
 
     public static MainFragment5 newInstance() {
         Bundle args = new Bundle();
@@ -70,15 +90,15 @@ public class MainFragment5 extends Fragment {
         fragments.add(WodeFragment3.newInstance());
         fragments.add(WodeFragment4.newInstance());
         fragments.add(WodeFragment5.newInstance());
-        MyFragmentPagerAdapter pagerAdapter = new MyFragmentPagerAdapter(getChildFragmentManager(),getLifecycle(),fragments);
+        MyFragmentPagerAdapter pagerAdapter = new MyFragmentPagerAdapter(getChildFragmentManager(), getLifecycle(), fragments);
         viewPager.setAdapter(pagerAdapter);
         viewPager.setCurrentItem(0);
         viewPager.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
                 View view = fragments.get(viewPager.getCurrentItem()).getView();
-                if(view!=null){
-                    updatePagerHeightForChild(view,viewPager);
+                if (view != null) {
+                    updatePagerHeightForChild(view, viewPager);
                 }
             }
         });
@@ -109,6 +129,69 @@ public class MainFragment5 extends Fragment {
         llXj = rootView.findViewById(R.id.ll_wode_xj);
         llSz = rootView.findViewById(R.id.ll_wode_sz);
         ivSetting = rootView.findViewById(R.id.iv_setting);
+        scrollView = rootView.findViewById(R.id.sc_scroll);
+
+        sceneRoot = (ViewGroup) rootView.findViewById(R.id.scene_root);
+        preScene = Scene.getSceneForLayout(sceneRoot, R.layout.main_fragment5_scene_begin, mContext);
+        endScene = Scene.getSceneForLayout(sceneRoot, R.layout.main_fragment5_scene_end, mContext);
+
+        sceneRoot2 = (ViewGroup) rootView.findViewById(R.id.scene_root_head);
+        preScene2 = Scene.getSceneForLayout(sceneRoot2, R.layout.head_scene_begin, mContext);
+        endScene2 = Scene.getSceneForLayout(sceneRoot2, R.layout.head_scene_end, mContext);
+
+        listener = new MyScrollView.OnMyScrollListener() {
+            @Override
+            public void onScrollStateChanged(MyScrollView view, int state) {
+                String str;
+                if (state == 0) {
+                    str = "IDLE";
+                } else if (state == 1) {
+                    str = "DRAG";
+                } else if (state == 2) {
+                    str = "FLING";
+                } else {
+                    str = "ERROR";
+                }
+                Log.d("brycegao", "滑动状态：" + str);
+            }
+
+            @Override
+            public void onScroll(MyScrollView view, int y) {
+                int i = oldY - y;
+                if (i < 0) {
+//                Transition fadeTransition = new Fade();
+//                TransitionSet transitionSet = new AutoTransition();
+                    TransitionInflater.from(mContext);
+                    Transition fadeTransition = new AutoTransition();
+//                transitionSet.addTransition(fadeTransition);
+                    TransitionManager.go(endScene, fadeTransition);
+                    TransitionManager.go(endScene2, fadeTransition);
+                } else if (y == 0) {
+                    TransitionManager.go(preScene);
+                    TransitionManager.go(preScene2);
+                }
+                Log.e("brycegao", "yyyyyy" + y);
+            }
+
+            @Override
+            public void onScrollToTop() {
+                Log.d("brycegao", "滑到顶部");
+            }
+
+            @Override
+            public void onScrollToBottom() {
+                Log.d("brycegao", "滑动底部");
+            }
+        };
+
+        scrollView.addOnScrollListner(listener);
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        scrollView.addOnScrollListner(listener);
     }
 
     @Override
@@ -184,25 +267,25 @@ public class MainFragment5 extends Fragment {
         }
     }
 
-    class PageChangeCallback extends ViewPager2.OnPageChangeCallback{
+    class PageChangeCallback extends ViewPager2.OnPageChangeCallback {
         @Override
         public void onPageSelected(int position) {
             super.onPageSelected(position);
             View view = fragments.get(position).getView();
-            if(view!=null){
-                updatePagerHeightForChild(view,viewPager);
+            if (view != null) {
+                updatePagerHeightForChild(view, viewPager);
             }
         }
     }
 
-    private void updatePagerHeightForChild(View view,ViewPager2 pager){
+    private void updatePagerHeightForChild(View view, ViewPager2 pager) {
         view.post(new Runnable() {
             @Override
             public void run() {
                 int wMeasureSpec = View.MeasureSpec.makeMeasureSpec(view.getWidth(), View.MeasureSpec.EXACTLY);
                 int hMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
                 view.measure(wMeasureSpec, hMeasureSpec);
-                if (pager.getLayoutParams().height != view.getMeasuredHeight()){
+                if (pager.getLayoutParams().height != view.getMeasuredHeight()) {
                     pager.getLayoutParams().height = view.getMeasuredHeight();
                 }
             }

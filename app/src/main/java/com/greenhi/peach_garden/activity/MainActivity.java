@@ -17,6 +17,7 @@ import com.greenhi.peach_garden.fragment.MainFragment2;
 import com.greenhi.peach_garden.fragment.MainFragment3;
 import com.greenhi.peach_garden.fragment.MainFragment4;
 import com.greenhi.peach_garden.fragment.MainFragment5;
+import com.greenhi.peach_garden.fragment.ShiguanFragment;
 import com.greenhi.peach_garden.utils.ScreenUtils;
 import com.greenhi.peach_garden.utils.UserMessage;
 
@@ -58,7 +59,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         viewPager.setUserInputEnabled(false);
         fragments = new ArrayList<>();
         fragments.add(MainFragment1.newInstance());
-        fragments.add(MainFragment2.newInstance());
+        fragments.add(ShiguanFragment.newInstance());
         fragments.add(MainFragment3.newInstance());
         fragments.add(MainFragment4.newInstance());
         fragments.add(MainFragment5.newInstance());

@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.greenhi.peach_garden.R;
 
 public class PoeterActivity extends AppCompatActivity implements View.OnClickListener {
-    private ImageButton btn1;
+    private ImageButton btn1,search_btn;
     private EditText editText;
     private Button[]buttons;
     @Override
@@ -27,6 +27,8 @@ public class PoeterActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_poeter);
         editText=findViewById(R.id.poeter_name);
         btn1=findViewById(R.id.poeter_back);
+        search_btn=findViewById(R.id.search_poeter_btn);
+        search_btn.setOnClickListener(this);
         btn1.setOnClickListener(this);
         buttons=new Button[]{findViewById(R.id.p1),findViewById(R.id.p2),findViewById(R.id.p3)
         ,findViewById(R.id.p4),findViewById(R.id.p5),findViewById(R.id.p6),findViewById(R.id.p7),
@@ -81,6 +83,10 @@ public class PoeterActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.p8:
                 go("孟浩然");
+                break;
+            case R.id.search_poeter_btn:
+                String p_name=editText.getText().toString();
+                go(p_name);
                 break;
 
         }

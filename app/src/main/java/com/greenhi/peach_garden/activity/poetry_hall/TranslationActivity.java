@@ -17,7 +17,6 @@ import com.greenhi.peach_garden.R;
 import com.greenhi.peach_garden.activity.MainActivity;
 
 public class TranslationActivity extends AppCompatActivity implements View.OnClickListener {
-    private ImageButton back_btn;
     private Button lg_btn1;
     private Button lg_btn2;
     private Button lg_btn3;
@@ -28,8 +27,6 @@ public class TranslationActivity extends AppCompatActivity implements View.OnCli
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translation);
-        back_btn=findViewById(R.id.back_btn1);
-        back_btn.setOnClickListener(this);
         lg_btn1=findViewById(R.id.English);
         lg_btn1.setOnClickListener(this);
         lg_btn2=findViewById(R.id.French);
@@ -46,10 +43,6 @@ public class TranslationActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.back_btn1:
-                this.finish();
-                break;
-
             case R.id.English:
                 Intent intent=new Intent(TranslationActivity.this,SearchActivity.class);
                 intent.putExtra("language","english");
