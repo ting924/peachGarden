@@ -4,18 +4,18 @@ public class ItemComment {
 
     private Integer id;
     private Integer uid;
+    private String userName;
     private Integer dynamicId;
     private String commentContent;
     private String createTime;
-    private String updateTime;
 
-    public ItemComment(Integer id, Integer uid, Integer dynamicId, String commentContent, String createTime, String updateTime) {
+    public ItemComment(Integer id, Integer uid, String userName,Integer dynamicId, String commentContent, String createTime) {
         this.id = id;
         this.uid = uid;
+        this.userName=userName;
         this.dynamicId = dynamicId;
         this.commentContent = commentContent;
         this.createTime = createTime;
-        this.updateTime = updateTime;
     }
 
     public Integer getId() {
@@ -34,6 +34,13 @@ public class ItemComment {
         this.uid = uid;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
     public String getCommentContent() {
         return commentContent;
     }

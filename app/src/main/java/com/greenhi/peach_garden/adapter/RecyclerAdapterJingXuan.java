@@ -16,6 +16,7 @@ import com.greenhi.peach_garden.R;
 import com.greenhi.peach_garden.activity.CommentActivity;
 import com.greenhi.peach_garden.item.ItemDataSZ;
 import com.greenhi.peach_garden.item.RecordsDTO;
+import com.greenhi.peach_garden.utils.JsonParse;
 import com.jaeger.ninegridimageview.NineGridImageView;
 import com.jaeger.ninegridimageview.NineGridImageViewAdapter;
 import com.loopj.android.http.AsyncHttpClient;
@@ -59,7 +60,6 @@ public class RecyclerAdapterJingXuan extends RecyclerView.Adapter<RecyclerAdapte
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapterJingXuan.ViewHolder holder, int position) {
         RecordsDTO data = jxList.get(position);
-
         //加载动态图片
         Integer did = data.getId();
         Integer imgCount = data.getImgCount();
@@ -74,8 +74,6 @@ public class RecyclerAdapterJingXuan extends RecyclerView.Adapter<RecyclerAdapte
 //            holder.nineGrid.setVisibility(View.GONE);
 //            holder.nineGrid.setVisibility(View.VISIBLE);
         }
-
-
         holder.comments.setText("" + data.getCommentNumber());
         holder.likes.setText("" + data.getLoveNumber());
         holder.text.setText(data.getDynamicContent());

@@ -31,13 +31,14 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/btnfabu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="10dp"
                 android:text="发布"
-                android:textSize="19dp"
-                android:textColor="@color/guanzhu_border"/>
+                android:textColor="@color/guanzhu_border"
+                android:textSize="19dp" />
 
         </RelativeLayout>
 

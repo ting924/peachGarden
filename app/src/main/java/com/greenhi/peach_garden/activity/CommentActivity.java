@@ -16,6 +16,7 @@ import com.greenhi.peach_garden.R;
 import com.greenhi.peach_garden.adapter.RecyclerAdapterComment;
 import com.greenhi.peach_garden.item.ItemComment;
 import com.greenhi.peach_garden.item.ItemDataSC;
+import com.greenhi.peach_garden.item.ItemUser;
 import com.greenhi.peach_garden.utils.InputTextMsgDialog;
 import com.greenhi.peach_garden.utils.JsonParse;
 import com.greenhi.peach_garden.utils.UserMessage;
@@ -50,12 +51,14 @@ public class CommentActivity extends AppCompatActivity {
     private int uid;
     private int dynamicId;
     private int position;
+    private ItemUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comment);
         uid= UserMessage.getUserInfo(this);
+        getUserMessage();
         Intent intent =getIntent();
         dynamicId = intent.getIntExtra("dynamicId",0);
         inputTextMsgDialog = new InputTextMsgDialog(this, R.style.dialog_center);
@@ -110,6 +113,26 @@ public class CommentActivity extends AppCompatActivity {
 
     }
 
+    private void getUserMessage(){
+        String url = "http://47.108.176.163:7777/user/selectOneById?id="+uid;
+        AsyncHttpClient client=new AsyncHttpClient();
+        client.get(url, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] bytes) {
+                try{
+                    String json=new String(bytes,"utf-8");
+                    user= JsonParse.Getuserbyid(json);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Log.d("error","获取用户信息失败");
+            }
+        });
+    }
+
     private void postAsynHttp(Integer uid,Integer dynamicId,String commentContent) throws JSONException {
         OkHttpClient mOkHttpClient = new OkHttpClient();
         JSONObject EventTraceInput =new JSONObject();
@@ -135,9 +158,11 @@ public class CommentActivity extends AppCompatActivity {
                     public void run() {
                         position=recyclerAdapter.getItemCount();
                         Log.d("position",position+"");
+                        Log.d("position",str);
                         Toast.makeText(getApplicationContext(), "请求成功", Toast.LENGTH_SHORT).show();
                         addCommentNumber();
-                        recyclerAdapter.add(position,new ItemComment(0,uid,dynamicId,commentContent,null,null));
+                        //0表示评论表的id，但是拿不到，又不需要这个，所有添0
+                        recyclerAdapter.add(position,new ItemComment(0,uid,user.getUserName(),dynamicId,commentContent,null));
                         recyclerView.scrollToPosition(recyclerAdapter.getItemCount());
                     }
                 });
