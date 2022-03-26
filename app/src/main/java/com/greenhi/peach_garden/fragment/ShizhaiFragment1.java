@@ -106,8 +106,10 @@ public class ShizhaiFragment1 extends Fragment implements RecyclerAdapterGuanZhu
                     String json=new String(bytes,"utf-8");
                     dynamics =JsonParse.Getdynamic(json);
                     System.out.println("dynamics----> "+dynamics.toString());
-                    recyclerAdapter = new RecyclerAdapterGuanZhu(mContext,dynamics);
-                    recyclerView.setAdapter(recyclerAdapter);
+                    if(dynamics!=null&&dynamics.size()>0){
+                        recyclerAdapter = new RecyclerAdapterGuanZhu(mContext,dynamics);
+                        recyclerView.setAdapter(recyclerAdapter);
+                    }
                 }catch (Exception e){
                     e.printStackTrace();
                 }

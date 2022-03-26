@@ -37,6 +37,14 @@ public class JsonParse {
         return result;
     }
 
+    public static ItemUser Getuserbyid(String json){
+        Gson gson=new Gson();
+        Type ListType=new TypeToken<Root<ItemUser>>(){}.getType();
+        Root<ItemUser> user=gson.fromJson(json,ListType);
+        ItemUser result = user.getResult();
+        return result;
+    }
+
     public  static  List<RecordsDTO> GetAllDynamic(String json){
         Gson gson=new Gson();
         Type ListType=new TypeToken<Root<ItemAllDynamic<List<RecordsDTO>>>>(){}.getType();
