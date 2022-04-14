@@ -47,11 +47,11 @@ public class TranContentActivity extends AppCompatActivity {
     private Boolean russian_state=false;
     private Boolean japanese_state=false;
     private Boolean korean_state=false;
-    public static String content_japanese = "";
-    public static String content_english = "";
-    public static String content_french = "";
-    public static String content_korean = "";
-    public static String content_russian = "";
+    public String content_japanese = "";
+    public String content_english = "";
+    public String content_french = "";
+    public String content_korean = "";
+    public String content_russian = "";
 
     private TextView textView;
     private String baseURL = "http://47.108.176.163:7777/poetry/";
@@ -216,12 +216,22 @@ public class TranContentActivity extends AppCompatActivity {
                                     Log.i(Tag, "暂无此诗文！");
                                     Message message = new Message();
                                     message.obj = "暂无此诗文！";
+                                    content_japanese = "暂无此诗文！";
+                                    content_russian = "暂无此诗文！";
+                                    content_english = "暂无此诗文！";
+                                    content_french = "暂无此诗文！";
+                                    content_korean = "暂无此诗文！";
                                     handler.sendMessage(message);
                                 }
                             } catch (JSONException e) {
                                 Log.i(Tag, "暂无此诗文！");
                                 Message message = new Message();
                                 message.obj = "暂无此诗文！";
+                                content_japanese = "暂无此诗文！";
+                                content_russian = "暂无此诗文！";
+                                content_english = "暂无此诗文！";
+                                content_french = "暂无此诗文！";
+                                content_korean = "暂无此诗文！";
                                 handler.sendMessage(message);
                             }
                         }

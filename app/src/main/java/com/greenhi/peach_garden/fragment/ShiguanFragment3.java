@@ -100,18 +100,15 @@ public class ShiguanFragment3 extends Fragment implements View.OnClickListener{
         editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                System.out.println(21212121);
-
                 if (!editText.getText().toString().equals("")) {
                     String p_name = editText.getText().toString();
-                    System.out.println(21212121);
-                    Activity activity1=getActivity();
-                    Intent intent = new Intent(activity1, TranContentActivity.class);
-                    intent.putExtra("title", p_name);
                     if (!history.contains(p_name)) {
                         history.add(p_name);
                     }
                     adapter.notifyDataSetChanged();
+                    Activity activity1=getActivity();
+                    Intent intent = new Intent(activity1, TranContentActivity.class);
+                    intent.putExtra("title", p_name);
                     startActivity(intent);
                     return true;
                 } else {
@@ -121,8 +118,8 @@ public class ShiguanFragment3 extends Fragment implements View.OnClickListener{
                 }
             }
         });
-        Activity activity1=getActivity();
-        adapter = new ArrayAdapter<String>(activity1, android.R.layout.simple_list_item_1, history);
+        Activity activity3=getActivity();
+        adapter = new ArrayAdapter<String>(activity3, android.R.layout.simple_list_item_1, history);
         gridView.setAdapter(adapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -131,7 +128,6 @@ public class ShiguanFragment3 extends Fragment implements View.OnClickListener{
                 Activity activity2=getActivity();
                 Intent intent1 = new Intent(activity2, TranContentActivity.class);
                 intent1.putExtra("title", title);
-                intent1.putExtra("language", lg);
                 startActivity(intent1);
             }
         });
