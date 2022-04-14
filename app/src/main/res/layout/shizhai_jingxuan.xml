@@ -39,7 +39,7 @@
             android:layout_width="60dp"
             android:layout_height="30dp"
             android:layout_centerVertical="true"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="20dp"
             android:layout_toEndOf="@+id/tv_sz_jx_name"
             android:src="@drawable/ic_guanzhu" />
 

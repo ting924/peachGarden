@@ -10,12 +10,13 @@ android:layout_margin="10dp">
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
     android:orientation="horizontal">
+
         <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/comment_head"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_centerVertical="true"
-        android:src="@drawable/default_circle_head" />
+            android:id="@+id/comment_head"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/default_circle_head" />
 
         <LinearLayout
             android:layout_width="match_parent"

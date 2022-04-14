@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.greenhi.peach_garden.R;
 import com.greenhi.peach_garden.activity.CommentActivity;
 import com.greenhi.peach_garden.item.ItemDataSZ;
+import com.greenhi.peach_garden.item.ItemDynamic;
 import com.greenhi.peach_garden.item.RecordsDTO;
 import com.greenhi.peach_garden.utils.JsonParse;
 import com.jaeger.ninegridimageview.NineGridImageView;
@@ -31,17 +32,17 @@ import java.util.List;
 import cz.msebera.android.httpclient.Header;
 
 public class RecyclerAdapterJingXuan extends RecyclerView.Adapter<RecyclerAdapterJingXuan.ViewHolder> {
-    private List<RecordsDTO> jxList;
+    private List<ItemDynamic> jxList;
     private int id;  //当前用户id
     private Context context;
 
-    public RecyclerAdapterJingXuan(Context context,List<RecordsDTO> jxList, int id) {
+    public RecyclerAdapterJingXuan(Context context,List<ItemDynamic> jxList, int id) {
         this.context = context;
         this.jxList = jxList;
         this.id = id;
     }
 
-    public void addAllData(List<RecordsDTO> jxListUpdate) {
+    public void addAllData(List<ItemDynamic> jxListUpdate) {
         if (jxListUpdate != null && jxListUpdate.size() > 0) {
             jxList.addAll(jxListUpdate);
             notifyItemRangeChanged(jxList.size() - jxListUpdate.size(), jxListUpdate.size());
@@ -59,11 +60,11 @@ public class RecyclerAdapterJingXuan extends RecyclerView.Adapter<RecyclerAdapte
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapterJingXuan.ViewHolder holder, int position) {
-        RecordsDTO data = jxList.get(position);
+        ItemDynamic data = jxList.get(position);
         //加载动态图片
         Integer did = data.getId();
         Integer imgCount = data.getImgCount();
-        if(imgCount>0){
+        if(imgCount>0) {
             List<String> urls = new ArrayList<>();
             String baseUrl = "http://47.108.176.163:7777/img_dynamic/";
             for (int i = 1; i < imgCount + 1; i++) {
@@ -74,13 +75,15 @@ public class RecyclerAdapterJingXuan extends RecyclerView.Adapter<RecyclerAdapte
 //            holder.nineGrid.setVisibility(View.GONE);
 //            holder.nineGrid.setVisibility(View.VISIBLE);
         }
+        holder.username.setText(data.getUserName());
         holder.comments.setText("" + data.getCommentNumber());
         holder.likes.setText("" + data.getLoveNumber());
         holder.text.setText(data.getDynamicContent());
         if (data.getCreateTime() != null) {
             holder.time.setText(data.getCreateTime().substring(0, 10) + " " + data.getCreateTime().substring(11, 19));
         }
-        holder.head.setImageResource(R.drawable.default_circle_head);
+        String url = "http://47.108.176.163:7777/img_user_head/"+data.getUid()+".png";
+        Picasso.with(context).load(url).placeholder(R.drawable.default_circle_head).into(holder.head);
         holder.btnPinlun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

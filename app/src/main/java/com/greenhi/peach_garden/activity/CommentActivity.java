@@ -3,6 +3,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -87,7 +89,7 @@ public class CommentActivity extends AppCompatActivity {
                 try{
                     String json=new String(bytes,"utf-8");
                     commentList = JsonParse.GetCommment(json);
-                    recyclerAdapter=new RecyclerAdapterComment(commentList);
+                    recyclerAdapter=new RecyclerAdapterComment(getBaseContext(),commentList);
                     recyclerView.setAdapter(recyclerAdapter);
                 }catch (Exception e){
                     e.printStackTrace();

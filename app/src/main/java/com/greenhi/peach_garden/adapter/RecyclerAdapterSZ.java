@@ -16,10 +16,12 @@ import com.greenhi.peach_garden.R;
 import com.greenhi.peach_garden.activity.CommentActivity;
 import com.greenhi.peach_garden.item.ItemDataSZ;
 import com.greenhi.peach_garden.item.ItemDynamic;
+import com.greenhi.peach_garden.utils.UserMessage;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.ms.square.android.expandabletextview.ExpandableTextView;
 import com.sackcentury.shinebuttonlib.ShineButton;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -29,10 +31,12 @@ public class RecyclerAdapterSZ extends RecyclerView.Adapter<RecyclerAdapterSZ.Vi
 
     private List<ItemDynamic> szList;
     private Context context;
+    private int id;
 
-    public RecyclerAdapterSZ(Context context,List<ItemDynamic> szList) {
+    public RecyclerAdapterSZ(Context context,List<ItemDynamic> szList,int id) {
         this.context=context;
         this.szList = szList;
+        this.id=id;
     }
 
     @NonNull
@@ -45,6 +49,7 @@ public class RecyclerAdapterSZ extends RecyclerView.Adapter<RecyclerAdapterSZ.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        String url = "http://47.108.176.163:7777/img_user_head/"+id+".png";
         ItemDynamic data = szList.get(position);
         holder.comments.setText(""+data.getCommentNumber());
         holder.likes.setText(""+data.getLoveNumber());
@@ -53,7 +58,9 @@ public class RecyclerAdapterSZ extends RecyclerView.Adapter<RecyclerAdapterSZ.Vi
             holder.time.setText(data.getCreateTime().substring(0,10)+" "+data.getCreateTime().substring(11,19));
         }
         holder.username.setText(data.getUserName());
+
         holder.head.setImageResource(R.drawable.default_circle_head);
+        Picasso.with(context).load(url).placeholder(R.drawable.placeholder).into(holder.head);
         holder.pinlun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -114,20 +121,6 @@ public class RecyclerAdapterSZ extends RecyclerView.Adapter<RecyclerAdapterSZ.Vi
             this.comments = itemView.findViewById(R.id.tv_sz_comment);
             this.pinlun=itemView.findViewById(R.id.iv_sz_comment);
             this.btLike=itemView.findViewById(R.id.wode_bt_heart);
-
-//            btLike.setOnCheckStateChangeListener(new ShineButton.OnCheckedChangeListener() {
-//                @Override
-//                public void onCheckedChanged(View view, boolean checked) {
-//                    Log.d("dianji", "jx_click2 " + checked);
-//                }
-//            });
-
-//            pinlun.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Log.d("评论按钮","我的评论按钮");
-//                }
-//            });
         }
 
     }

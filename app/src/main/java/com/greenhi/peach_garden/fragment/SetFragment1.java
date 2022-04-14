@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.greenhi.peach_garden.R;
@@ -22,6 +23,8 @@ import com.greenhi.peach_garden.activity.LoginActivity;
 import com.greenhi.peach_garden.activity.MainActivity;
 import com.greenhi.peach_garden.utils.ActivityCollectorUtil;
 import com.greenhi.peach_garden.utils.ShareUtils;
+import com.greenhi.peach_garden.utils.UserMessage;
+import com.squareup.picasso.Picasso;
 
 public class SetFragment1 extends Fragment {
 
@@ -29,6 +32,9 @@ public class SetFragment1 extends Fragment {
     private View rootView;
 
     private Button btn1,btn2;
+    private ImageView headPortrait;
+
+    private int id;
 
     public static SetFragment1 newInstance(){
         Bundle args = new Bundle();
@@ -55,9 +61,12 @@ public class SetFragment1 extends Fragment {
     }
 
     private void initView() {
-
+        id = UserMessage.getUserInfo(getContext());
+        String url = "http://47.108.176.163:7777/img_user_head/"+id+".png";
         btn1 = rootView.findViewById(R.id.set_tab1_btn1);
         btn2 = rootView.findViewById(R.id.set_tab1_btn2);
+        headPortrait = rootView.findViewById(R.id.head_portrait);
+        Picasso.with(getContext()).load(url).placeholder(R.drawable.default_circle_head).into(headPortrait);
 
     }
 

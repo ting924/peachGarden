@@ -81,7 +81,7 @@ public class WodeFragment2 extends Fragment {
                 try{
                     String json=new String(bytes,"utf-8");
                     users = JsonParse.Getuser(json);
-                    recyclerAdapter = new RecyclerAdapterFS(users,id);
+                    recyclerAdapter = new RecyclerAdapterFS(mContext,users,id);
                     recyclerView.setAdapter(recyclerAdapter);
 
                 }catch (Exception e){

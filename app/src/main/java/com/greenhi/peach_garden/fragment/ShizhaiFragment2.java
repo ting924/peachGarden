@@ -21,6 +21,7 @@ import com.greenhi.peach_garden.adapter.RecyclerAdapterGuanZhu;
 import com.greenhi.peach_garden.adapter.RecyclerAdapterJingXuan;
 import com.greenhi.peach_garden.animator.MyItemAnimator;
 import com.greenhi.peach_garden.item.ItemDataSZ;
+import com.greenhi.peach_garden.item.ItemDynamic;
 import com.greenhi.peach_garden.item.RecordsDTO;
 import com.greenhi.peach_garden.utils.JsonParse;
 import com.greenhi.peach_garden.utils.UserMessage;
@@ -50,7 +51,7 @@ public class ShizhaiFragment2 extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerAdapterJingXuan recyclerAdapter;
 
-    private List<RecordsDTO> jxList;
+    private List<ItemDynamic> jxList;
 
     public static ShizhaiFragment2 newInstance() {
         Bundle args = new Bundle();
@@ -110,20 +111,20 @@ public class ShizhaiFragment2 extends Fragment {
 
     private void getAllDynamics(final boolean isRefresh) {
         page++;
-        String url = "http://47.108.176.163:7777/dynamic/getAllPaging?pageNo=" + page + "&pageSize=" + pageSize;
+        String url = "http://47.108.176.163:7777/dynamic/selectPaging?pageNo=" + page + "&pageSize=" + pageSize;
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(url, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] bytes) {
                 try {
                     String json = new String(bytes, "utf-8");
-                    jxList = JsonParse.GetAllDynamic(json);
-                    totalNum = JsonParse.GetTotalPage(json);
+                    jxList = JsonParse.Getdynamic(json);
+//                    totalNum = JsonParse.GetTotalPage(json);
                     Log.d("print", json);
 
                     if (jxList != null && jxList.size() > 0) {
                         if (page == 1) {
-                            recyclerAdapter = new RecyclerAdapterJingXuan(mContext,jxList, id);
+                            recyclerAdapter = new RecyclerAdapterJingXuan(mContext,jxList,id);
                             recyclerView.setAdapter(recyclerAdapter);
                         } else {
                             recyclerAdapter.addAllData(jxList);

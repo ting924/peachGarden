@@ -29,6 +29,8 @@ import com.greenhi.peach_garden.R;
 import com.greenhi.peach_garden.activity.SettingActivity;
 import com.greenhi.peach_garden.adapter.MyFragmentPagerAdapter;
 import com.greenhi.peach_garden.scroll_view.MyScrollView;
+import com.greenhi.peach_garden.utils.UserMessage;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -36,13 +38,14 @@ public class MainFragment5 extends Fragment {
 
     private Context mContext;
     private View rootView;
+    private int id;
 
     private ViewPager2 viewPager;
     private ArrayList<Fragment> fragments;
 
     private TextView tvSc, tvFs, tvGz, tvXj, tvSz, tvCurrent;
     private LinearLayout llSc, llFs, llGz, llXj, llSz;
-    private ImageView ivSetting;
+    private ImageView ivSetting,touxiang;
 
     private MyScrollView scrollView;
     private MyScrollView.OnMyScrollListener listener;
@@ -117,6 +120,8 @@ public class MainFragment5 extends Fragment {
     }
 
     private void initView() {
+        id = UserMessage.getUserInfo(getContext());
+        String url = "http://47.108.176.163:7777/img_user_head/"+id+".png";
         tvSc = rootView.findViewById(R.id.tv_wode_sc);
         tvFs = rootView.findViewById(R.id.tv_wode_fs);
         tvGz = rootView.findViewById(R.id.tv_wode_gz);
@@ -130,6 +135,7 @@ public class MainFragment5 extends Fragment {
         llSz = rootView.findViewById(R.id.ll_wode_sz);
         ivSetting = rootView.findViewById(R.id.iv_setting);
         scrollView = rootView.findViewById(R.id.sc_scroll);
+        touxiang=rootView.findViewById(R.id.iv_head);
 
         sceneRoot = (ViewGroup) rootView.findViewById(R.id.scene_root);
         preScene = Scene.getSceneForLayout(sceneRoot, R.layout.main_fragment5_scene_begin, mContext);
@@ -139,6 +145,7 @@ public class MainFragment5 extends Fragment {
         preScene2 = Scene.getSceneForLayout(sceneRoot2, R.layout.head_scene_begin, mContext);
         endScene2 = Scene.getSceneForLayout(sceneRoot2, R.layout.head_scene_end, mContext);
 
+        Picasso.with(getContext()).load(url).placeholder(R.drawable.default_circle_head).into(touxiang);
         listener = new MyScrollView.OnMyScrollListener() {
             @Override
             public void onScrollStateChanged(MyScrollView view, int state) {

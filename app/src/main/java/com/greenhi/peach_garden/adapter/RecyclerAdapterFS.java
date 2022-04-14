@@ -1,5 +1,6 @@
 package com.greenhi.peach_garden.adapter;
 
+import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.greenhi.peach_garden.item.ItemUser;
 import com.greenhi.peach_garden.utils.UserMessage;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -27,8 +29,10 @@ public class RecyclerAdapterFS extends RecyclerView.Adapter<RecyclerAdapterFS.Vi
 
     private List<ItemUser> fsList;
     private int id;
+    private Context context;
 
-    public RecyclerAdapterFS(List<ItemUser> fsList,int id) {
+    public RecyclerAdapterFS(Context context, List<ItemUser> fsList, int id) {
+        this.context=context;
         this.fsList = fsList;
         this.id=id;
     }
@@ -46,7 +50,8 @@ public class RecyclerAdapterFS extends RecyclerView.Adapter<RecyclerAdapterFS.Vi
         ItemUser data = fsList.get(position);
         holder.username.setText(data.getUserName());
         holder.intro.setText(data.getBriefIntroduction());
-        holder.head.setImageResource(R.drawable.default_circle_head);
+        String url = "http://47.108.176.163:7777/img_user_head/"+data.getId()+".png";
+        Picasso.with(context).load(url).placeholder(R.drawable.default_circle_head).into(holder.head);
         holder.guanzhu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

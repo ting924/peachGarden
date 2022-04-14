@@ -80,7 +80,7 @@ public class WodeFragment5 extends Fragment {
                 try{
                     String json=new String(bytes,"utf-8");
                     dynamics = JsonParse.Getdynamic(json);
-                    recyclerAdapter = new RecyclerAdapterSZ(mContext,dynamics);
+                    recyclerAdapter = new RecyclerAdapterSZ(mContext,dynamics,id);
                     recyclerView.setAdapter(recyclerAdapter);
                 }catch (Exception e){
                     e.printStackTrace();

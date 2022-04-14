@@ -1,5 +1,6 @@
 package com.greenhi.peach_garden.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.greenhi.peach_garden.R;
 import com.greenhi.peach_garden.item.ItemComment;
 import com.ms.square.android.expandabletextview.ExpandableTextView;
+import com.squareup.picasso.Picasso;
 
 
 import java.util.List;
@@ -19,7 +21,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RecyclerAdapterComment extends RecyclerView.Adapter<RecyclerAdapterComment.ViewHolder>{
     private List<ItemComment> commentList;
-    public RecyclerAdapterComment(List<ItemComment> commentList) {
+    private Context context;
+    public RecyclerAdapterComment(Context context, List<ItemComment> commentList) {
+        this.context=context;
         this.commentList = commentList;
     }
 
@@ -36,6 +40,8 @@ public class RecyclerAdapterComment extends RecyclerView.Adapter<RecyclerAdapter
         ItemComment data = commentList.get(position);
         holder.username.setText(data.getUserName());
         holder.text.setText(data.getCommentContent());
+        String url = "http://47.108.176.163:7777/img_user_head/"+data.getId()+".png";
+        Picasso.with(context).load(url).placeholder(R.drawable.default_circle_head).into(holder.profile);
     }
 
     @Override
@@ -53,6 +59,7 @@ public class RecyclerAdapterComment extends RecyclerView.Adapter<RecyclerAdapter
             super(itemView);
             username = itemView.findViewById(R.id.comment_name);
             text = itemView.findViewById(R.id.comment_content);
+            profile = itemView.findViewById(R.id.comment_head);
 
         }
     }

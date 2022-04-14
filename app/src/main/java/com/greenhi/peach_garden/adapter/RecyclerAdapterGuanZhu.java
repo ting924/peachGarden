@@ -111,7 +111,8 @@ public class RecyclerAdapterGuanZhu extends RecyclerView.Adapter<RecyclerAdapter
             holder.time.setText(data.getCreateTime().substring(0,10)+" "+data.getCreateTime().substring(11,19));
         }
         holder.username.setText(data.getUserName());
-        holder.head.setImageResource(R.drawable.default_circle_head);
+        String url = "http://47.108.176.163:7777/img_user_head/"+data.getUid()+".png";
+        Picasso.with(context).load(url).placeholder(R.drawable.default_circle_head).into(holder.head);
 
         holder.btnPinlun.setOnClickListener(new View.OnClickListener() {
             @Override
