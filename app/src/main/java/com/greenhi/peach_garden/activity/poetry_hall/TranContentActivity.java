@@ -47,11 +47,11 @@ public class TranContentActivity extends AppCompatActivity {
     private Boolean russian_state=false;
     private Boolean japanese_state=false;
     private Boolean korean_state=false;
-    public static String content_japanese;
-    public static String content_english;
-    public static String content_french;
-    public static String content_korean;
-    public static String content_russian;
+    public static String content_japanese = "";
+    public static String content_english = "";
+    public static String content_french = "";
+    public static String content_korean = "";
+    public static String content_russian = "";
 
     private TextView textView;
     private String baseURL = "http://47.108.176.163:7777/poetry/";
