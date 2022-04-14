@@ -31,11 +31,17 @@
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/shiguan_btn_selector.xml" value="0.26979166666666665" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/shoucang_button.xml" value="0.26979166666666665" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/tab_home_selector.xml" value="0.22037037037037038" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/activity_grand.xml" value="0.18342391304347827" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/activity_main.xml" value="0.19067028985507245" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/activity_none.xml" value="0.18342391304347827" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/activity_poemcourse.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/activity_setting.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/activity_translation.xml" value="0.18342391304347827" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/bottom_layout.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/course_item.xml" value="0.18795289855072464" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/fragment1.xml" value="0.18704710144927536" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/fragment_set1.xml" value="0.19429347826086957" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/fragment_shiguan.xml" value="0.18342391304347827" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/head_scene_begin.xml" value="0.16485507246376813" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/head_scene_end.xml" value="0.16485507246376813" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/layout_top.xml" value="0.176" />

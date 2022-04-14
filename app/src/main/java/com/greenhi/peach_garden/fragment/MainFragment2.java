@@ -23,7 +23,6 @@ import com.greenhi.peach_garden.activity.MainActivity;
 import com.greenhi.peach_garden.activity.poetry_hall.DynastyActivity;
 import com.greenhi.peach_garden.activity.poetry_hall.GrandActivity;
 import com.greenhi.peach_garden.activity.poetry_hall.PoemContentActivity;
-import com.greenhi.peach_garden.activity.poetry_hall.PoemcourseActivity;
 import com.greenhi.peach_garden.activity.poetry_hall.PoeterActivity;
 import com.greenhi.peach_garden.activity.poetry_hall.ThemeActivity;
 import com.greenhi.peach_garden.activity.poetry_hall.TodayreadActivity;

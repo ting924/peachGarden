@@ -26,8 +26,8 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.greenhi.peach_garden.R;
 import com.greenhi.peach_garden.activity.poetry_hall.NoneActivity;
-import com.greenhi.peach_garden.activity.poetry_hall.PoemcourseActivity;
 import com.greenhi.peach_garden.activity.poetry_hall.entity.CourseItem;
+import com.greenhi.peach_garden.adapter.MyFragmentPagerAdapter;
 import com.greenhi.peach_garden.adapter.MyGridAdapter;
 
 import java.util.ArrayList;
@@ -51,8 +51,8 @@ public class ShiguanFragment2 extends Fragment{
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
 
-            int item = viewPager.getCurrentItem()+1;
-            viewPager.setCurrentItem(item);
+//            int item = viewPager.getCurrentItem()+1;
+//            viewPager.setCurrentItem(item);
             //延迟发消息
             handler.sendEmptyMessageDelayed(0,1000);
         }
@@ -78,7 +78,7 @@ public class ShiguanFragment2 extends Fragment{
         initView();
         getDatas();
         gridView.setAdapter(new MyGridAdapter(datas));
-        gridView.setAdapter(new MyGridAdapter(datas));
+//        gridView.setAdapter(new MyGridAdapter(datas));
         imageViews=new ArrayList<ImageView>();
         editText.setOnKeyListener(new View.OnKeyListener() {
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
@@ -144,7 +144,6 @@ public class ShiguanFragment2 extends Fragment{
 
     }
     class MyPagerAdapter extends PagerAdapter {
-
 
         /**
          * 得到图片的总数

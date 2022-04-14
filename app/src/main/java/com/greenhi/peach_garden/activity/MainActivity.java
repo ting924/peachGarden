@@ -64,7 +64,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         fragments.add(MainFragment5.newInstance());
         MyFragmentPagerAdapter pagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager(), getLifecycle(), fragments);
         viewPager.setAdapter(pagerAdapter);
-        viewPager.setCurrentItem(0, false);
+        viewPager.setCurrentItem(0,false);
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
