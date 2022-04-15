@@ -15,10 +15,9 @@ import com.greenhi.peach_garden.R;
 import com.greenhi.peach_garden.adapter.RecyclerAdapterComment;
 import com.greenhi.peach_garden.item.ItemComment;
 import com.greenhi.peach_garden.item.ItemDataSC;
-<<<<<<< Updated upstream
+
 import com.greenhi.peach_garden.item.ItemUser;
-=======
->>>>>>> Stashed changes
+
 import com.greenhi.peach_garden.utils.ActivityCollectorUtil;
 import com.greenhi.peach_garden.utils.InputTextMsgDialog;
 import com.greenhi.peach_garden.utils.JsonParse;
@@ -47,22 +46,16 @@ public class CommentActivity extends AppCompatActivity {
     private int uid;
     private int dynamicId;
     private int position;
-
+    private ItemUser user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityCollectorUtil.addActivity(this);
         setContentView(R.layout.activity_comment);
-<<<<<<< Updated upstream
         uid= UserMessage.getUserInfo(this);
         getUserMessage();
         Intent intent =getIntent();
         dynamicId = intent.getIntExtra("dynamicId",0);
-=======
-        uid = UserMessage.getUserInfo(this);
-        Intent intent = getIntent();
-        dynamicId = intent.getIntExtra("dynamicId", 0);
->>>>>>> Stashed changes
         inputTextMsgDialog = new InputTextMsgDialog(this, R.style.dialog_center);
         inputTextMsgDialog.setmOnTextSendListener(new InputTextMsgDialog.OnTextSendListener() {
             @Override
@@ -108,10 +101,7 @@ public class CommentActivity extends AppCompatActivity {
                 Log.d("获取评论失败","失败");
             }
         });
-
     }
-
-<<<<<<< Updated upstream
     private void getUserMessage(){
         String url = "http://47.108.176.163:7777/user/selectOneById?id="+uid;
         AsyncHttpClient client=new AsyncHttpClient();
@@ -131,11 +121,7 @@ public class CommentActivity extends AppCompatActivity {
             }
         });
     }
-
     private void postAsynHttp(Integer uid,Integer dynamicId,String commentContent) throws JSONException {
-=======
-    private void postAsynHttp(Integer uid, Integer dynamicId, String commentContent) throws JSONException {
->>>>>>> Stashed changes
         OkHttpClient mOkHttpClient = new OkHttpClient();
         JSONObject EventTraceInput =new JSONObject();
         EventTraceInput.put("uid",uid);
@@ -158,7 +144,6 @@ public class CommentActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-<<<<<<< Updated upstream
                         position=recyclerAdapter.getItemCount();
                         Log.d("position",position+"");
                         Log.d("position",str);
@@ -166,13 +151,6 @@ public class CommentActivity extends AppCompatActivity {
                         addCommentNumber();
                         //0表示评论表的id，但是拿不到，又不需要这个，所有添0
                         recyclerAdapter.add(position,new ItemComment(0,uid,user.getUserName(),dynamicId,commentContent,null));
-=======
-                        position = recyclerAdapter.getItemCount();
-                        Log.d("position", position + "");
-                        Toast.makeText(getApplicationContext(), "请求成功", Toast.LENGTH_SHORT).show();
-                        addCommentNumber();
-//                        recyclerAdapter.add(position, new ItemComment(0, uid, dynamicId, commentContent, null, null));
->>>>>>> Stashed changes
                         recyclerView.scrollToPosition(recyclerAdapter.getItemCount());
                     }
                 });
@@ -197,7 +175,6 @@ public class CommentActivity extends AppCompatActivity {
             }
         });
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
