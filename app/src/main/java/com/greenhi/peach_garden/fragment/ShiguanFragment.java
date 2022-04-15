@@ -23,15 +23,6 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.greenhi.peach_garden.R;
-import com.greenhi.peach_garden.activity.MainActivity;
-import com.greenhi.peach_garden.activity.poetry_hall.DynastyActivity;
-import com.greenhi.peach_garden.activity.poetry_hall.GrandActivity;
-import com.greenhi.peach_garden.activity.poetry_hall.PoemContentActivity;
-import com.greenhi.peach_garden.activity.poetry_hall.PoemcourseActivity;
-import com.greenhi.peach_garden.activity.poetry_hall.PoeterActivity;
-import com.greenhi.peach_garden.activity.poetry_hall.ThemeActivity;
-import com.greenhi.peach_garden.activity.poetry_hall.TodayreadActivity;
-import com.greenhi.peach_garden.activity.poetry_hall.TranslationActivity;
 import com.greenhi.peach_garden.adapter.MyFragmentPagerAdapter;
 
 import java.util.ArrayList;
@@ -124,6 +115,8 @@ public class ShiguanFragment extends Fragment {
     }
     public void initPager(){
         viewPager = rootView.findViewById(R.id.shiguan_viewPager);
+        // 禁止滑动
+        viewPager.setUserInputEnabled(false);
 //        viewPager.setOffscreenPageLimit(5);
         fragments = new ArrayList<>();
         fragments.add(MainFragment2.newInstance());

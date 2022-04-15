@@ -115,7 +115,7 @@ public class RegistActivity extends Activity {
                     call.enqueue(new Callback() {
                         @Override
                         public void onFailure(Call call, IOException e) {
-                        }
+                       }
 
                         @Override
                         public void onResponse(Call call, Response response) throws IOException {
@@ -139,7 +139,9 @@ public class RegistActivity extends Activity {
                                             }
                                             Intent intent = new Intent(RegistActivity.this, LoginActivity.class);
                                             startActivity(intent);
+                                            Looper.prepare();
                                             Toast.makeText(RegistActivity.this, "注册成功！", Toast.LENGTH_SHORT).show();
+                                            Looper.loop();
                                         }
                                     }
                                 } else {

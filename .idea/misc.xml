@@ -31,11 +31,17 @@
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/shiguan_btn_selector.xml" value="0.26979166666666665" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/shoucang_button.xml" value="0.26979166666666665" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/drawable/tab_home_selector.xml" value="0.22037037037037038" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/activity_grand.xml" value="0.18342391304347827" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/activity_main.xml" value="0.19067028985507245" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/activity_none.xml" value="0.18342391304347827" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/activity_poemcourse.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/activity_setting.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/activity_translation.xml" value="0.18342391304347827" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/bottom_layout.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/course_item.xml" value="0.18795289855072464" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/fragment1.xml" value="0.18704710144927536" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/fragment_set1.xml" value="0.19429347826086957" />
+        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/fragment_shiguan.xml" value="0.18342391304347827" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/head_scene_begin.xml" value="0.16485507246376813" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/head_scene_end.xml" value="0.16485507246376813" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/layout_top.xml" value="0.176" />
@@ -75,8 +81,35 @@
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/wode_fragment3.xml" value="0.2028985507246377" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/wode_fragment4.xml" value="0.2028985507246377" />
         <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/layout/wode_fragment5.xml" value="0.2028985507246377" />
-        <entry key="..\:/AndroidStudioProjects/peachgarden/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.26564102564102565" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/drawable/btn_st.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/activity_poemcourse.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/activity_regist.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/activity_search.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/activity_setting.xml" value="0.1331521739130435" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/activity_titleresults.xml" value="0.1331521739130435" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/activity_todayread.xml" value="0.1331521739130435" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/activity_trancontent.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/activity_translation.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/fragment_shiguan.xml" value="0.10005065856129686" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/main_fragment1.xml" value="0.12182971014492754" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/main_fragment2.xml" value="0.12182971014492754" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/main_fragment3.xml" value="0.12182971014492754" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/main_fragment4.xml" value="0.12182971014492754" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/main_fragment5.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/main_fragment5_scene_begin.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/main_fragment5_scene_end.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/set_fragment1.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/set_fragment2.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/set_fragment3.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/set_fragment6.xml" value="0.13247213779128672" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/shishe_fragment1.xml" value="0.14673913043478262" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/shishe_fragment2.xml" value="0.14673913043478262" />
+        <entry key="..\:/Users/Administrator/Desktop/peachGarden/app/src/main/res/layout/shishe_fragment3.xml" value="0.14673913043478262" />
         <entry key="..\:/peachGarden/app/src/main/res/drawable/border_line.xml" value="0.1625" />
+        <entry key="..\:/peachGarden/app/src/main/res/drawable/btn_send_normal.xml" value="0.26564102564102565" />
+        <entry key="..\:/peachGarden/app/src/main/res/drawable/btn_send_pressed.xml" value="0.26564102564102565" />
+        <entry key="..\:/peachGarden/app/src/main/res/drawable/buttonstyle.xml" value="0.25" />
+        <entry key="..\:/peachGarden/app/src/main/res/drawable/editbackground.xml" value="0.24791666666666667" />
         <entry key="..\:/peachGarden/app/src/main/res/drawable/ic_launcher_background.xml" value="0.25416666666666665" />
         <entry key="..\:/peachGarden/app/src/main/res/drawable/niming.xml" value="0.26979166666666665" />
         <entry key="..\:/peachGarden/app/src/main/res/drawable/sc_tab_text_selector.xml" value="0.25416666666666665" />
@@ -86,14 +119,20 @@
         <entry key="..\:/peachGarden/app/src/main/res/drawable/shiguan_btn_text_selector.xml" value="0.2037037037037037" />
         <entry key="..\:/peachGarden/app/src/main/res/drawable/shizhai_tab_textview_selector.xml" value="0.25416666666666665" />
         <entry key="..\:/peachGarden/app/src/main/res/drawable/shizhai_tabtv_shape_selector.xml" value="0.25416666666666665" />
+        <entry key="..\:/peachGarden/app/src/main/res/layout/activity_comment.xml" value="0.264" />
+        <entry key="..\:/peachGarden/app/src/main/res/layout/activity_launcher.xml" value="0.13802083333333334" />
+        <entry key="..\:/peachGarden/app/src/main/res/layout/activity_login.xml" value="0.23802083333333332" />
+        <entry key="..\:/peachGarden/app/src/main/res/layout/activity_regist.xml" value="0.2" />
+        <entry key="..\:/peachGarden/app/src/main/res/layout/dialog_input_text_msg.xml" value="0.536" />
         <entry key="..\:/peachGarden/app/src/main/res/layout/activity_comment.xml" value="0.23385416666666667" />
         <entry key="..\:/peachGarden/app/src/main/res/layout/fragment_shizhai1.xml" value="0.1296875" />
+        <entry key="..\:/peachGarden/app/src/main/res/layout/item_comment.xml" value="0.264" />
         <entry key="..\:/peachGarden/app/src/main/res/layout/head_scene_begin.xml" value="0.23385416666666667" />
         <entry key="..\:/peachGarden/app/src/main/res/layout/item_comment.xml" value="0.23385416666666667" />
         <entry key="..\:/peachGarden/app/src/main/res/layout/layout_top.xml" value="0.23435897435897435" />
         <entry key="..\:/peachGarden/app/src/main/res/layout/main_fragment2.xml" value="0.23802083333333332" />
-        <entry key="..\:/peachGarden/app/src/main/res/layout/main_fragment3.xml" value="0.22604166666666667" />
         <entry key="..\:/peachGarden/app/src/main/res/layout/main_fragment4.xml" value="0.2" />
+        <entry key="..\:/peachGarden/app/src/main/res/layout/main_fragment5.xml" value="0.144" />
         <entry key="..\:/peachGarden/app/src/main/res/layout/main_fragment5.xml" value="0.2" />
         <entry key="..\:/peachGarden/app/src/main/res/layout/main_fragment5_scene_begin.xml" value="0.23385416666666667" />
         <entry key="..\:/peachGarden/app/src/main/res/layout/main_fragment5_scene_end.xml" value="0.23385416666666667" />
@@ -110,6 +149,7 @@
         <entry key="..\:/peachGarden/app/src/main/res/layout/shizhai_jingxuan.xml" value="0.4002057613168724" />
         <entry key="..\:/peachGarden/app/src/main/res/layout/wode_fragment1.xml" value="0.14635416666666667" />
         <entry key="..\:/peachGarden/app/src/main/res/layout/wode_fragment2.xml" value="0.14635416666666667" />
+        <entry key="..\:/peachGarden/app/src/main/res/layout/wode_fragment3.xml" value="0.25364583333333335" />
         <entry key="..\:/peachGarden/app/src/main/res/layout/wode_fragment4.xml" value="0.1296875" />
         <entry key="..\:/peachGarden/app/src/main/res/layout/wode_fragment5.xml" value="0.4" />
         <entry key="..\:/peachGarden/app/src/main/res/menu/menu_pop.xml" value="0.25364583333333335" />

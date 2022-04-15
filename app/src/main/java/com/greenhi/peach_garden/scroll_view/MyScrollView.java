@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
  * @author brycegao
  */
 public class MyScrollView extends ScrollView {
+
     private ArrayList<OnMyScrollListener> listeners;
 
     private int currentState;
@@ -51,6 +53,7 @@ public class MyScrollView extends ScrollView {
     public MyScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
+
 
     @Override public boolean onTouchEvent(MotionEvent ev) {
         boolean lastDragState = getDragState();
@@ -126,6 +129,7 @@ public class MyScrollView extends ScrollView {
             }
         }
     }
+
 
     //判断是否滑到底部
     private boolean isCurrentBottom() {
