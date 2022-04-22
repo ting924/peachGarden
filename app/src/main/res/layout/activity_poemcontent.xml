@@ -80,24 +80,123 @@
                 android:textSize="22sp"
                 android:textStyle="bold"></TextView>
         </LinearLayout>
+
         <LinearLayout
-            android:padding="20dp"
-            android:layout_below="@id/main"
+            android:id="@+id/sx1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/main"
             android:layout_centerHorizontal="true"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="20dp">
 
             <TextView
-                android:padding="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape2"
+                android:padding="5dp"
                 android:text="注释"
-                android:textSize="18sp"
-                android:textColor="@color/white"></TextView>
+                android:textColor="@color/white"
+                android:textSize="18sp"></TextView>
+
             <TextView
                 android:id="@+id/annotation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/sx2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sx1"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape2"
+                android:padding="5dp"
+                android:text="翻译"
+                android:textColor="@color/white"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:id="@+id/fanyi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/sx3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sx2"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape2"
+                android:padding="5dp"
+                android:text="赏析"
+                android:textColor="@color/white"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:id="@+id/shangxi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/sx4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sx3"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape2"
+                android:padding="5dp"
+                android:text="作者简介"
+                android:textColor="@color/white"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:id="@+id/zzjj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/sx5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sx4"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape2"
+                android:padding="5dp"
+                android:text="创作背景"
+                android:textColor="@color/white"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:id="@+id/czbj"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"></TextView>

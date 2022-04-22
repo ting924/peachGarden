@@ -38,11 +38,19 @@ public class PoemContentActivity extends AppCompatActivity {
         String author;
         String content;
         String notes;
+        String transform;//翻译
+        String appreciation;//赏析
+        String creativeBackground;//创作背景
+        String authorIntroduction;//作者介绍
 
-        public Poem(String author, String content, String notes) {
+        public Poem(String author, String content, String notes,String transform,String appreciation,String creativeBackground,String authorIntroduction) {
             this.author = author;
             this.content = content;
             this.notes = notes;
+            this.transform=transform;
+            this.appreciation=appreciation;
+            this.authorIntroduction=authorIntroduction;
+            this.creativeBackground=creativeBackground;
         }
 
     }
@@ -52,6 +60,10 @@ public class PoemContentActivity extends AppCompatActivity {
     TextView contentText;
     TextView writterText;
     TextView annotationText;
+    TextView fanyiText;
+    TextView shangxiText;
+    TextView czbjText;
+    TextView zzjjText;
     ImageButton imageButton;
     private Handler handler = new Handler() {
         @Override
@@ -61,6 +73,11 @@ public class PoemContentActivity extends AppCompatActivity {
             contentText.setText(poem.content);
             writterText.setText(poem.author);
             annotationText.setText(poem.notes);
+            fanyiText.setText(poem.transform);
+            shangxiText.setText(poem.appreciation);
+            czbjText.setText(poem.creativeBackground);
+            zzjjText.setText(poem.authorIntroduction);
+
         }
     };
 
@@ -83,7 +100,11 @@ public class PoemContentActivity extends AppCompatActivity {
         contentText = findViewById(R.id.content);
         writterText = findViewById(R.id.writter);
         annotationText = findViewById(R.id.annotation);
-        getDatas("selectByTitleBase", title);
+        fanyiText=findViewById(R.id.fanyi);
+        shangxiText=findViewById(R.id.shangxi);
+        czbjText=findViewById(R.id.czbj);
+        zzjjText=findViewById(R.id.zzjj);
+        getDatas("getOntByTitle", title);
 
     }
 
@@ -112,13 +133,17 @@ public class PoemContentActivity extends AppCompatActivity {
                                 String author = jsonObject1.getString("author");
                                 String content = jsonObject1.getString("content");
                                 String notes = jsonObject1.getString("notes");
+                                String transform=jsonObject1.getString("transform");
+                                String appreciation=jsonObject1.getString("appreciation");
+                                String creativeBackground=jsonObject1.getString("creativeBackground");
+                                String authorIntroduction=jsonObject1.getString("authorIntroduction");
                                 if (notes.equals("null")) {
                                     notes = "暂无注释哦！";
                                 }
                                 Log.i(Tag, author);
                                 Log.i(Tag, content);
                                 Log.i(Tag, notes);
-                                Poem poem = new Poem(author, content, notes);
+                                Poem poem = new Poem(author, content, notes,transform,appreciation,creativeBackground,authorIntroduction);
                                 Message message = new Message();
                                 message.obj = poem;
                                 handler.sendMessage(message);
