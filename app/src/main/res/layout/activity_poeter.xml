@@ -1,67 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/shizhai_background_color"
-    android:orientation="vertical">
+    android:background="@color/shizhai_background_color">
     <ImageButton
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:id="@+id/poeter_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/ic_arrow_back_48px"></ImageButton>
-    <LinearLayout
-        android:padding="10dp"
-        android:layout_width="match_parent"
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+
+    android:layout_centerInParent="true">
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape1"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal"
+        android:layout_centerInParent="true">
+    <LinearLayout
+        android:id="@+id/shiren"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp">
+        android:layout_marginRight="100dp"
+        android:background="@drawable/shape1"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
         <ImageButton
             android:id="@+id/search_poeter_btn"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:background="@drawable/search"></ImageButton>
+
         <EditText
             android:id="@+id/poeter_name"
             android:layout_width="0dp"
-            android:layout_weight="9"
             android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_weight="16"
             android:background="@drawable/shape1"
             android:hint="请输入诗人名称"
-            android:layout_marginTop="6dp"
             android:paddingLeft="25dp"></EditText>
+
         <ImageView
+            android:layout_marginLeft="3dp"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="35dp"
+            android:layout_weight="2"
             android:background="@drawable/dictation"></ImageView>
     </LinearLayout>
-  <RelativeLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content">
-      <ImageView
-          android:id="@+id/poeter_img"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:background="@drawable/g1"
-          android:layout_centerInParent="true"></ImageView>
-      <TextView
-          android:layout_marginTop="5dp"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="推荐"
-          android:textSize="20sp"
-          android:textColor="@color/white"
-          android:layout_below="@id/poeter_img"
-         android:layout_alignLeft="@id/poeter_img"></TextView>
-  </RelativeLayout>
-    <LinearLayout
-       android:layout_marginLeft="125dp"
-        android:layout_marginTop="15dp"
+
+    <RelativeLayout
+        android:id="@+id/shirentuijian"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/shiren"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/poeter_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/g1"></ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/poeter_img"
+            android:layout_alignLeft="@id/poeter_img"
+            android:layout_marginTop="5dp"
+            android:text="推荐"
+            android:textColor="@color/white"
+            android:textSize="20sp"></TextView>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/show1"
+        android:layout_below="@+id/shirentuijian"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
        <Button
@@ -90,12 +113,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape1"
-            android:layout_marginRight="28dp"
             android:text="李清照"></Button>
     </LinearLayout>
     <LinearLayout
-        android:layout_marginLeft="125dp"
-        android:layout_width="match_parent"
+        android:layout_below="@+id/show1"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="25dp">
@@ -125,10 +148,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape1"
-            android:layout_marginRight="28dp"
             android:text="孟浩然"></Button>
     </LinearLayout>
+    </RelativeLayout>
 
+</RelativeLayout>
 
-
-</LinearLayout>
+</RelativeLayout>

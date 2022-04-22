@@ -22,7 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.greenhi.peach_garden.R;
 import com.greenhi.peach_garden.utils.ActivityCollectorUtil;
-import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
+//import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;

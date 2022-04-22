@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
     <LinearLayout
+        android:id="@+id/dengjilan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/main_background_color">
@@ -14,7 +14,8 @@
         android:background="@drawable/ic_arrow_back_48px"></ImageButton>
     </LinearLayout>
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <LinearLayout
             android:orientation="horizontal"
@@ -41,13 +42,13 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:text="简"
-                   android:textSize="22sp"
+                   android:textSize="18sp"
                      android:textColor="@color/white"></TextView>
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:text="单"
-                   android:textSize="22sp"
+                   android:textSize="18sp"
                    android:textColor="@color/white"></TextView>
            </LinearLayout>
               <LinearLayout
@@ -66,13 +67,13 @@
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:text="中"
-                      android:textSize="22sp"
+                      android:textSize="18sp"
                       android:textColor="@color/white"></TextView>
                   <TextView
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:text="等"
-                      android:textSize="22sp"
+                      android:textSize="18sp"
                       android:textColor="@color/white"></TextView>
               </LinearLayout>
               <LinearLayout
@@ -91,13 +92,13 @@
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:text="困"
-                      android:textSize="22sp"
+                      android:textSize="18sp"
                       android:textColor="@color/white"></TextView>
                   <TextView
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:text="难"
-                      android:textSize="22sp"
+                      android:textSize="18sp"
                       android:textColor="@color/white"></TextView>
               </LinearLayout>
           </LinearLayout>
@@ -105,4 +106,4 @@
     </RelativeLayout>
 
 
-</LinearLayout>
+</RelativeLayout>

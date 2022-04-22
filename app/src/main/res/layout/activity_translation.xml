@@ -1,43 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/shizhai_background_color"
     android:orientation="vertical">
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:paddingTop="10dp"
         android:paddingLeft="60dp"
         android:paddingRight="60dp"
         >
+
         <LinearLayout
             android:id="@+id/s_editor"
-            android:padding="10dp"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/shape1"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
-            android:orientation="horizontal">
+            android:background="@drawable/shape1"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
             <ImageView
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/search"></ImageView>
+
             <EditText
                 android:id="@+id/tran_s"
                 android:layout_width="0dp"
-                android:layout_weight="8"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_weight="8"
                 android:background="@drawable/shape1"
                 android:hint="请输入诗歌题目"
                 android:imeOptions="actionDone"
-                android:layout_marginTop="6dp"
-                android:paddingLeft="25dp"></EditText>
+                android:paddingLeft="18dp"></EditText>
+
             <ImageView
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="35dp"
+                android:layout_weight="1"
                 android:background="@drawable/dictation"></ImageView>
         </LinearLayout>
 
@@ -45,27 +51,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/s_editor"
-            android:layout_alignLeft="@id/s_editor"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp">
+            android:layout_alignLeft="@+id/s_editor"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
             <Button
                 android:id="@+id/clear_history"
-                android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/shape2"
                 android:padding="5dp"
                 android:text="清空历史记录"
                 android:textColor="@color/white"></Button>
+
             <GridView
                 android:id="@+id/history_record"
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
-                android:numColumns="3"></GridView>
+                android:numColumns="2"></GridView>
 
 
         </LinearLayout>
 
     </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>

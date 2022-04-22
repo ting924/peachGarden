@@ -64,7 +64,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
-                        android:layout_weight="8"
+                        android:layout_weight="9"
                         android:background="@color/back_hui"
                         android:hint="搜索视频"></EditText>
                 </LinearLayout>
@@ -174,9 +174,10 @@
                     android:visibility="visible">
 
                     <androidx.viewpager.widget.ViewPager
+                        android:paddingHorizontal="30dp"
                         android:id="@+id/viewpager1"
                         android:layout_width="match_parent"
-                        android:layout_height="150dp" />
+                        android:layout_height="200dp" />
 
                     <LinearLayout
                         android:id="@+id/points"
