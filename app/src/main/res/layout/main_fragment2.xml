@@ -28,7 +28,7 @@
             android:layout_weight="1.7"
             android:layout_height="wrap_content">
             <LinearLayout
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="5dp"
                 android:id="@+id/search_colum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

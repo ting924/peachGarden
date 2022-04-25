@@ -10,7 +10,9 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -37,7 +39,6 @@ public class ShiguanFragment2 extends Fragment{
     private View rootView;
     private ViewGroup mContentView;
     private GridView gridView;
-
     private EditText editText;
     private ArrayList<CourseItem>datas=new ArrayList<CourseItem>();
     private ArrayList<ImageView>imageViews;
@@ -50,11 +51,10 @@ public class ShiguanFragment2 extends Fragment{
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-
-//            int item = viewPager.getCurrentItem()+1;
-//            viewPager.setCurrentItem(item);
+            int item = viewPager.getCurrentItem()+1;
+           viewPager.setCurrentItem(item);
             //延迟发消息
-            handler.sendEmptyMessageDelayed(0,1000);
+            handler.sendEmptyMessageDelayed(0,400000);
         }
     };
     public static ShiguanFragment2 newInstance() {
@@ -113,9 +113,9 @@ public class ShiguanFragment2 extends Fragment{
 
             linearLayout.addView(point);
         }
-        viewPager.setAdapter(new ShiguanFragment2.MyPagerAdapter());
-        viewPager.setOnPageChangeListener(new ShiguanFragment2.MyOnPageChangeListener());
-        handler.sendEmptyMessageDelayed(0,3000);
+        viewPager.setAdapter(new MyPagerAdapter());
+        viewPager.addOnPageChangeListener(new MyOnPageChangeListener());
+        handler.sendEmptyMessageDelayed(0,300000);
         return rootView;
     }
     private void initData() {
@@ -165,16 +165,18 @@ public class ShiguanFragment2 extends Fragment{
         public Object instantiateItem(ViewGroup container, final int position) {
 
             int realPosition = position%imageViews.size();
-
-            final ImageView imageView =  imageViews.get(realPosition);
+             ImageView imageView =  imageViews.get(realPosition);
+            ViewParent parent=imageView.getParent();
             if(imageView.getParent()!=null){
                 ((ViewGroup)imageView.getParent()).removeView(imageView);
             }
-            container.addView(imageView);//添加到ViewPager中
-//            Log.e(TAG, "instantiateItem==" + position + ",---imageView==" + imageView);
-            return imageView;
 
-        }
+                container.addView(imageView);//添加到ViewPager中
+
+//            Log.e(TAG, "instantiateItem==" + position + ",---imageView==" + imageView);
+            imageView.setTag(position);
+            return imageView;}
+
         @Override
         public boolean isViewFromObject(View view, Object object) {
 //            if(view == object){
@@ -186,9 +188,9 @@ public class ShiguanFragment2 extends Fragment{
         }
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
-//            super.destroyItem(container, position, object);
 //            Log.e(TAG, "destroyItem==" + position + ",---object==" + object);
-            container.removeView((View) object);
+            int realP=position%imageViews.size();
+            container.removeView(imageViews.get(realP));
 
         }
 
@@ -214,7 +216,6 @@ public class ShiguanFragment2 extends Fragment{
         @Override
         public void onPageSelected(int position) {
             int realPosition = position%imageViews.size();
-
             //把上一个高亮的设置默认-灰色
             linearLayout.getChildAt(preposition).setEnabled(false);
             //当前的设置为高亮-红色
@@ -244,7 +245,7 @@ public class ShiguanFragment2 extends Fragment{
             }else if(state == ViewPager.SCROLL_STATE_IDLE&&isDragging){
                 isDragging = false;
                 handler.removeCallbacksAndMessages(null);
-                handler.sendEmptyMessageDelayed(0,1000);
+                handler.sendEmptyMessageDelayed(0,4000);
             }
 
         }
