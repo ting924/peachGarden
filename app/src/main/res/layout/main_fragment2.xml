@@ -27,6 +27,7 @@
             android:layout_weight="1.7"
             android:layout_height="wrap_content">
             <LinearLayout
+                android:layout_marginTop="20dp"
                 android:id="@+id/search_colum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -70,20 +71,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/search_colum"
-                android:layout_alignLeft="@+id/search_colum"
-                android:layout_centerInParent="true"
-                android:layout_marginRight="25dp"
-                android:paddingRight="60dp">
+                android:layout_marginRight="25dp">
 
                 <RelativeLayout
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
                     android:background="@color/back_hui"
-                    android:paddingLeft="15dp"
+                    android:paddingLeft="30dp"
                     android:paddingTop="30dp"
-                    android:paddingRight="15dp"
+                    android:paddingRight="30dp"
                     android:paddingBottom="30dp">
 
                     <LinearLayout
@@ -92,7 +90,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="30dp"
                         android:background="@color/white"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:padding="5dp">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -104,7 +103,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="15dp"
                             android:layout_marginTop="10dp"
-                            android:layout_marginRight="35dp"
+                            android:layout_marginRight="15dp"
                             android:text="诗人"
                             android:textSize="16sp"></TextView>
 
@@ -119,12 +118,12 @@
                         android:id="@+id/theme"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
                         android:layout_marginLeft="30dp"
                         android:layout_marginBottom="30dp"
                         android:layout_toRightOf="@id/poeter"
                         android:background="@color/white"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:padding="5dp">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -136,7 +135,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="15dp"
                             android:layout_marginTop="10dp"
-                            android:layout_marginRight="35dp"
+                            android:layout_marginRight="15dp"
                             android:text="主题"
                             android:textSize="16sp"></TextView>
 
@@ -153,7 +152,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/poeter"
                         android:background="@color/white"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:padding="5dp">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -165,7 +165,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="15dp"
                             android:layout_marginTop="10dp"
-                            android:layout_marginRight="35dp"
+                            android:layout_marginRight="15dp"
                             android:text="朝代"
                             android:textSize="16sp"></TextView>
 
@@ -181,11 +181,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/theme"
-                        android:layout_alignParentRight="true"
                         android:layout_marginLeft="30dp"
                         android:layout_toRightOf="@id/dynasty"
                         android:background="@color/white"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:padding="5dp">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -197,7 +197,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="15dp"
                             android:layout_marginTop="10dp"
-                            android:layout_marginRight="35dp"
+                            android:layout_marginRight="15dp"
                             android:text="难度"
                             android:textSize="16sp"></TextView>
 
