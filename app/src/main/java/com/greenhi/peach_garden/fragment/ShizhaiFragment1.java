@@ -97,7 +97,7 @@ public class ShizhaiFragment1 extends Fragment implements RecyclerAdapterGuanZhu
     }
 
     private void getFocusDynamics(){
-        String url = "http://47.108.176.163:7777/dynamic/selectFocusByUid?uid="+id;
+        String url = "http://47.108.176.163:7777/dynamic/selectFocusByUidPaging?uid="+id+"&pageNo=1&pageSize=2";
         AsyncHttpClient client=new AsyncHttpClient();
         client.get(url, new AsyncHttpResponseHandler() {
             @Override
