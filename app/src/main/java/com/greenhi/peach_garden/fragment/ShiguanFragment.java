@@ -116,7 +116,7 @@ public class ShiguanFragment extends Fragment {
     public void initPager(){
         viewPager = rootView.findViewById(R.id.shiguan_viewPager);
         // 禁止滑动
-        viewPager.setUserInputEnabled(false);
+//        viewPager.setUserInputEnabled(false);
 //        viewPager.setOffscreenPageLimit(5);
         fragments = new ArrayList<>();
         fragments.add(MainFragment2.newInstance());
@@ -129,9 +129,9 @@ public class ShiguanFragment extends Fragment {
             @Override
             public void onGlobalLayout() {
                 View view = fragments.get(viewPager.getCurrentItem()).getView();
-                if(view!=null){
-                    updatePagerHeightForChild(view,viewPager);
-                }
+//                if(view!=null){
+//                    updatePagerHeightForChild(view,viewPager);
+//                }
             }
         });
         viewPager.registerOnPageChangeCallback(new PageChangeCallback() {
